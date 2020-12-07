@@ -15,7 +15,6 @@ public class SaleProductContainer {
 		if (instance == null) {
 			instance = new SaleProductContainer();
 		}
-		//wallah bilalh
 		return instance;
 	}
 	
@@ -23,8 +22,8 @@ public class SaleProductContainer {
 		SaleProduct res = null;
 		Iterator<SaleProduct> it = saleProducts.iterator();
 		while (it.hasNext() && res == null) {
-			Person temp = it.next();
-			if (temp.getPhone().equalsIgnoreCase(phone)) {
+			SaleProduct temp = it.next();
+			if (temp.getSaleProductName().equalsIgnoreCase(name)) {
 				res = temp;
 			}
 		}
