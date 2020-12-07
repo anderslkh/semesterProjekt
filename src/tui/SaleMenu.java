@@ -1,6 +1,10 @@
 package tui;
 
+import java.util.List;
+import java.util.Scanner;
+
 import controller.SaleController;
+import model.Person;
 
 public class SaleMenu {
 
@@ -49,8 +53,45 @@ public class SaleMenu {
 		return choice;
 	}
 	
+	
+	private int findPerson() {
+		List<Person> currL = null;
+		boolean found = false;
+		System.out.println("søg efter personer med navn");
+		Scanner scanner = new Scanner(System.in);
+		String input = null;
+		while (!found && scanner.hasNext()) {
+			input = scanner.next();
+			if (lC.findPeople(input).size() > 0) {
+				currL = lC.findPeople(input);
+				displayPerson(currL);
+				found = true;
+			} else {
+				System.out.println("kunne ikke finde nogle personner med det navn");
+			}
+		}
+		System.out.println("vælg person med med [tal]");
+		return chooseInput(currL, scanner);
+	}
+	
 	private void searchSaleProduct() {
-		
+		List<SaleProduct> currP = null;
+		boolean found = false;
+		System.out.println("søg efter personer med navn");
+		Scanner scanner = new Scanner(System.in);
+		String input = null;
+		while (!found && scanner.hasNext()) {
+			input = scanner.next();
+			if (lC.findPeople(input).size() > 0) {
+				currL = lC.findPeople(input);
+				displayPerson(currL);
+				found = true;
+			} else {
+				System.out.println("kunne ikke finde nogle personner med det navn");
+			}
+		}
+		System.out.println("vælg person med med [tal]");
+		return chooseInput(currL, scanner);
 	}
 	
 	private void enterSaleProduct() {

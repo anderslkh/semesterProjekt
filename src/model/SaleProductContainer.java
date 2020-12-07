@@ -15,6 +15,7 @@ public class SaleProductContainer {
 		if (instance == null) {
 			instance = new SaleProductContainer();
 		}
+		//wallah bilalh
 		return instance;
 	}
 	
@@ -29,4 +30,3 @@ public class SaleProductContainer {
 		}
 		return res;
 	}
-}
