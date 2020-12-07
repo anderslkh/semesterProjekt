@@ -48,4 +48,24 @@ public class SaleMenu {
 		choice = TextInput.inputNumber("\nPick an option");
 		return choice;
 	}
+	
+	private void searchSaleProduct() {
+		
+	}
+	
+	private void enterSaleProduct() {
+		
+	}
+	
+	private void addCustomerToSale() {
+		
+	}
+	
+	private void choosePaymentMethod() {
+		
+	}
+	
+	private void createReciept() {
+		
+	}
 }
