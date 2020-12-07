@@ -21,12 +21,15 @@ public class MainMenu {
 			int choice = writeMainMenu();
 			switch (choice) {
 			case 1:
+				//start sale menu
 				saleMenu.start();
 				break;
 			case 2:
+				//start loan menu
 				loanMenu.start();
 				break;
 			case 3:
+				//start client menu
 				clientMenu.start();
 				break;
 			case 4:
