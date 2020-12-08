@@ -8,7 +8,7 @@ public class SaleContainer {
 	private ArrayList<SaleOrder> saleOrders;
 
 	private SaleContainer() {
-		orders = new ArrayList<>();
+		saleOrders = new ArrayList<>();
 	}
 
 	public static SaleContainer getInstance() {
@@ -19,7 +19,7 @@ public class SaleContainer {
 	}
 
 	public void addOrder(SaleOrder saleOrder) {
-		orders.add(saleOrders);
+		saleOrders.add(saleOrder);
 	}
 
 	public SaleOrder findOrder(int saleOrderID) {
