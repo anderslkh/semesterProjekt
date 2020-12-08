@@ -6,13 +6,34 @@ public class SaleProduct {
 	private String description;
 	private int saleItemNumber;
 	private String saleBarcode;
+	private int price;
+	private String dateOfPrice;
 
-	public SaleProduct(String saleProductName, String madeByCompany, String description, int saleItemNumber, String saleBarcode) {
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getDateOfPrice() {
+		return dateOfPrice;
+	}
+
+	public void setDateOfPrice(String dateOfPrice) {
+		this.dateOfPrice = dateOfPrice;
+	}
+
+	public SaleProduct(String saleProductName, String madeByCompany, String description, int saleItemNumber,
+			String saleBarcode, int price, String dateOfPrice) {
 		this.saleProductName = saleProductName;
 		this.madeByCompany = madeByCompany;
 		this.description = description;
 		this.saleItemNumber = saleItemNumber;
 		this.saleBarcode = saleBarcode;
+		this.price = price;
+		this.dateOfPrice = dateOfPrice;
 	}
 
 	public String getSaleProductName() {

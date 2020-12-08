@@ -18,7 +18,8 @@ public class SaleProductContainer {
 		return instance;
 	}
 	
-	public SaleProduct searchSaleProduct(String name) {
+	//Dette stykke kode er taget fra Anders gruppe i miniprojekt design
+	public SaleProduct findSaleProductByName(String name) {
 		SaleProduct res = null;
 		Iterator<SaleProduct> it = saleProducts.iterator();
 		while (it.hasNext() && res == null) {
@@ -28,4 +29,10 @@ public class SaleProductContainer {
 			}
 		}
 		return res;
+	}	
+	
+	public void addPerson(SaleProduct saleProduct) {
+		saleProducts.add(saleProduct);
 	}
+
+}

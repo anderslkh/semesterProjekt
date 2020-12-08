@@ -1,13 +1,9 @@
 package tui;
 
 import java.util.List;
-import java.util.Scanner;
-
-import controller.SaleController;
-import model.Person;
+import controller.*;
 
 public class SaleMenu {
-
 	private SaleController saleController;
 
 	public SaleMenu() {
@@ -24,12 +20,12 @@ public class SaleMenu {
 			int choice = writeSaleMenu();
 			switch (choice) {
 			case 1:
-				//create sale
-				//needs to be implemented VV
-				//createSale();
+				// create sale
+				// needs to be implemented VV
+				// createSale();
 				break;
 			case 2:
-				//find sale
+				// find sale
 				System.out.println("Feature not yet implemented.");
 				break;
 			case 3:
@@ -52,61 +48,24 @@ public class SaleMenu {
 		choice = TextInput.inputNumber("\nPick an option");
 		return choice;
 	}
-	
-	
-	private int findPerson() {
-		List<Person> currL = null;
-		boolean found = false;
-		System.out.println("søg efter personer med navn");
-		Scanner scanner = new Scanner(System.in);
-		String input = null;
-		while (!found && scanner.hasNext()) {
-			input = scanner.next();
-			if (lC.findPeople(input).size() > 0) {
-				currL = lC.findPeople(input);
-				displayPerson(currL);
-				found = true;
-			} else {
-				System.out.println("kunne ikke finde nogle personner med det navn");
-			}
-		}
-		System.out.println("vælg person med med [tal]");
-		return chooseInput(currL, scanner);
+
+	private void createSale() {
+
 	}
-	
-	private void searchSaleProduct() {
-		List<SaleProduct> currP = null;
-		boolean found = false;
-		System.out.println("søg efter personer med navn");
-		Scanner scanner = new Scanner(System.in);
-		String input = null;
-		while (!found && scanner.hasNext()) {
-			input = scanner.next();
-			if (lC.findPeople(input).size() > 0) {
-				currL = lC.findPeople(input);
-				displayPerson(currL);
-				found = true;
-			} else {
-				System.out.println("kunne ikke finde nogle personner med det navn");
-			}
-		}
-		System.out.println("vælg person med med [tal]");
-		return chooseInput(currL, scanner);
+
+	private void findSale() {
+
 	}
-	
-	private void enterSaleProduct() {
-		
+
+	private void showDetails(Order order) {
+		System.out.println("\nName: " + person.getName());
+		System.out.println("Address: " + person.getAddress());
+		System.out.println("Postalcode: " + person.getPostalCode());
+		System.out.println("City: " + person.getCity());
+		System.out.println("Phone: " + person.getPhone());
 	}
-	
-	private void addCustomerToSale() {
-		
-	}
-	
-	private void choosePaymentMethod() {
-		
-	}
-	
+
 	private void createReciept() {
-		
+
 	}
 }

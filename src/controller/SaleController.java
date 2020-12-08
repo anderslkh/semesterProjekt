@@ -1,6 +1,5 @@
 package controller;
 
-import model.Sale;
 import model.SaleContainer;
 
 public class SaleController {
@@ -16,8 +15,8 @@ public class SaleController {
 		personContainer.addPerson(person);
 	}
 
-	public Person findPerson(String phone) {
-		return personContainer.findPerson(phone);
+	public SaleProduct searchSaleProduct() {
+		return saleProductContainer.findSaleProductByName(phone);
 	}
 }
 
