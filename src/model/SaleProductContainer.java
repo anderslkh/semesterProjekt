@@ -17,8 +17,8 @@ public class SaleProductContainer {
 		}
 		return instance;
 	}
-	
-	//Dette stykke kode er taget fra Anders gruppe i miniprojekt design
+
+	// Dette stykke kode er taget fra Anders gruppe i miniprojekt design
 	public SaleProduct findSaleProductByName(String name) {
 		SaleProduct res = null;
 		Iterator<SaleProduct> it = saleProducts.iterator();
@@ -29,9 +29,22 @@ public class SaleProductContainer {
 			}
 		}
 		return res;
-	}	
-	
-	public void addPerson(SaleProduct saleProduct) {
+	}
+
+	// Dette stykke kode er taget fra Anders gruppe i miniprojekt design
+	public SaleProduct findSaleProductByID(int id) {
+		SaleProduct res = null;
+		Iterator<SaleProduct> it = saleProducts.iterator();
+		while (it.hasNext() && res == null) {
+			SaleProduct temp = it.next();
+			if (temp.getSaleProductNumber() == id) {
+				res = temp;
+			}
+		}
+		return res;
+	}
+
+	public void addSaleProduct(SaleProduct saleProduct) {
 		saleProducts.add(saleProduct);
 	}
 

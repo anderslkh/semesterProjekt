@@ -4,34 +4,18 @@ public class SaleProduct {
 	private String saleProductName;
 	private String madeByCompany;
 	private String description;
-	private int saleItemNumber;
-	private String saleBarcode;
+	private int saleProductNumber;
+	private String saleProductBarcode;
 	private int price;
 	private String dateOfPrice;
 
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-	public String getDateOfPrice() {
-		return dateOfPrice;
-	}
-
-	public void setDateOfPrice(String dateOfPrice) {
-		this.dateOfPrice = dateOfPrice;
-	}
-
-	public SaleProduct(String saleProductName, String madeByCompany, String description, int saleItemNumber,
-			String saleBarcode, int price, String dateOfPrice) {
+	public SaleProduct(String saleProductName, String madeByCompany, String description, int saleProductNumber,
+			String saleProductBarcode, int price, String dateOfPrice) {
 		this.saleProductName = saleProductName;
 		this.madeByCompany = madeByCompany;
 		this.description = description;
-		this.saleItemNumber = saleItemNumber;
-		this.saleBarcode = saleBarcode;
+		this.saleProductNumber = saleProductNumber;
+		this.saleProductBarcode = saleProductBarcode;
 		this.price = price;
 		this.dateOfPrice = dateOfPrice;
 	}
@@ -60,20 +44,37 @@ public class SaleProduct {
 		this.description = description;
 	}
 
-	public int getSaleItemNumber() {
-		return saleItemNumber;
+	public int getSaleProductNumber() {
+		return saleProductNumber;
 	}
 
-	public void setSaleItemNumber(int saleItemNumber) {
-		this.saleItemNumber = saleItemNumber;
+	public void setSaleProductNumber(int saleProductNumber) {
+		this.saleProductNumber = saleProductNumber;
 	}
 
-	public String getSaleBarcode() {
-		return saleBarcode;
+	public String getSaleProductBarcode() {
+		return saleProductBarcode;
 	}
 
-	public void setSaleBarcode(String saleBarcode) {
-		this.saleBarcode = saleBarcode;
+	public void setSaleProductBarcode(String saleProductBarcode) {
+		this.saleProductBarcode = saleProductBarcode;
 	}
 
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getDateOfPrice() {
+		return dateOfPrice;
+	}
+
+	public void setDateOfPrice(String dateOfPrice) {
+		this.dateOfPrice = dateOfPrice;
+	}
+
+	
 }

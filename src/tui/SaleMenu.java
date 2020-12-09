@@ -2,6 +2,7 @@ package tui;
 
 import java.util.List;
 import controller.*;
+import model.SaleOrder;
 
 public class SaleMenu {
 	private SaleController saleController;
@@ -57,12 +58,12 @@ public class SaleMenu {
 
 	}
 
-	private void showDetails(Order order) {
-		System.out.println("\nName: " + person.getName());
-		System.out.println("Address: " + person.getAddress());
-		System.out.println("Postalcode: " + person.getPostalCode());
-		System.out.println("City: " + person.getCity());
-		System.out.println("Phone: " + person.getPhone());
+	private void showDetails(SaleOrder saleOrder) {
+		System.out.println("\nName: " + saleOrder.getName());
+		System.out.println("Address: " + saleOrder.getAddress());
+		System.out.println("Postalcode: " + saleOrder.getPostalCode());
+		System.out.println("City: " + saleOrder.getCity());
+		System.out.println("Phone: " + saleOrder.getPhone());
 	}
 
 	private void createReciept() {
