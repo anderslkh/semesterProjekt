@@ -59,10 +59,10 @@ public class SaleMenu {
 	}
 
 	private void showDetails(SaleOrder saleOrder) {
-		System.out.println("\nName: " + saleOrder.getName());
-		System.out.println("Address: " + saleOrder.getAddress());
-		System.out.println("Postalcode: " + saleOrder.getPostalCode());
-		System.out.println("City: " + saleOrder.getCity());
+		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
+		System.out.println("Employee: " + saleOrder.getEmployee());
+		System.out.println("Saleproduct: " + saleOrder.getPostalCode());
+		System.out.println("Quantity: " + saleOrder.getCity());
 		System.out.println("Phone: " + saleOrder.getPhone());
 	}
 

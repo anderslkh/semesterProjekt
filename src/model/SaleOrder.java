@@ -1,12 +1,21 @@
 package model;
 
+import java.util.ArrayList;
+
 public class SaleOrder {
 	private int saleOrderID;
 	private Employee employee;
-	
-	public SaleOrder(int saleOrderID, Employee employee) {
+	private ArrayList<SaleOrderLine> saleOrderLines;
+	private Customer customer;
+	private int paymentMethod;
+
+	public SaleOrder(int saleOrderID, Employee employee, Customer customer,
+			int paymentMethod) {
 		this.saleOrderID = saleOrderID;
 		this.employee = employee;
+		saleOrderLines = new ArrayList<>();
+		this.customer = customer;
+		this.paymentMethod = paymentMethod;
 	}
 
 	public int getSaleID() {
@@ -24,4 +33,38 @@ public class SaleOrder {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+
+	public int getSaleOrderID() {
+		return saleOrderID;
+	}
+
+	public void setSaleOrderID(int saleOrderID) {
+		this.saleOrderID = saleOrderID;
+	}
+
+	public ArrayList<SaleOrderLine> getSaleOrderLines() {
+		return saleOrderLines;
+	}
+
+	public void setSaleOrderLines(ArrayList<SaleOrderLine> saleOrderLines) {
+		this.saleOrderLines = saleOrderLines;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public int getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(int paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+	
+	
 }

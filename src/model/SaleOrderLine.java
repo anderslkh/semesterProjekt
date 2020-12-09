@@ -1,7 +1,6 @@
 package model;
 
 public class SaleOrderLine {
-
 	private SaleProduct saleProduct;
 	private int quantity;
 

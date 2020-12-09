@@ -18,11 +18,11 @@ public class SaleContainer {
 		return instance;
 	}
 
-	public void addOrder(SaleOrder saleOrder) {
+	public void addSaleOrder(SaleOrder saleOrder) {
 		saleOrders.add(saleOrder);
 	}
 
-	public SaleOrder findOrder(int saleOrderID) {
+	public SaleOrder findSaleOrder(int saleOrderID) {
 		SaleOrder res = null;
 		Iterator<SaleOrder> it = saleOrders.iterator();
 		while (it.hasNext() && res == null) {
