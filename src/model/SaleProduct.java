@@ -1,31 +1,41 @@
 package model;
 
 public class SaleProduct {
-	private String saleProductName;
+	private String productName;
+	private int productID;
 	private String madeByCompany;
 	private String description;
-	private int saleProductNumber;
-	private String saleProductBarcode;
+	private int productNumber;
+	private String productBarcode;
 	private int price;
 	private String dateOfPrice;
 
-	public SaleProduct(String saleProductName, String madeByCompany, String description, int saleProductNumber,
-			String saleProductBarcode, int price, String dateOfPrice) {
-		this.saleProductName = saleProductName;
+	public SaleProduct(String productName, int productID, String madeByCompany, String description, int productNumber,
+			String productBarcode, int price, String dateOfPrice) {
+		this.productName = productName;
+		this.productID = productID;
 		this.madeByCompany = madeByCompany;
 		this.description = description;
-		this.saleProductNumber = saleProductNumber;
-		this.saleProductBarcode = saleProductBarcode;
+		this.productNumber = productNumber;
+		this.productBarcode = productBarcode;
 		this.price = price;
 		this.dateOfPrice = dateOfPrice;
 	}
 
-	public String getSaleProductName() {
-		return saleProductName;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setSaleProductName(String saleProductName) {
-		this.saleProductName = saleProductName;
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public int getProductID() {
+		return productID;
+	}
+
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public String getMadeByCompany() {
@@ -44,20 +54,20 @@ public class SaleProduct {
 		this.description = description;
 	}
 
-	public int getSaleProductNumber() {
-		return saleProductNumber;
+	public int getProductNumber() {
+		return productNumber;
 	}
 
-	public void setSaleProductNumber(int saleProductNumber) {
-		this.saleProductNumber = saleProductNumber;
+	public void setProductNumber(int productNumber) {
+		this.productNumber = productNumber;
 	}
 
-	public String getSaleProductBarcode() {
-		return saleProductBarcode;
+	public String getProductBarcode() {
+		return productBarcode;
 	}
 
-	public void setSaleProductBarcode(String saleProductBarcode) {
-		this.saleProductBarcode = saleProductBarcode;
+	public void setProductBarcode(String productBarcode) {
+		this.productBarcode = productBarcode;
 	}
 
 	public int getPrice() {
@@ -76,5 +86,4 @@ public class SaleProduct {
 		this.dateOfPrice = dateOfPrice;
 	}
 
-	
 }

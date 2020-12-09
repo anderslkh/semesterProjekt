@@ -19,12 +19,12 @@ public class SaleProductContainer {
 	}
 
 	// Dette stykke kode er taget fra Anders gruppe i miniprojekt design
-	public SaleProduct findSaleProductByName(String name) {
+	public SaleProduct findSaleProductByName(String productName) {
 		SaleProduct res = null;
 		Iterator<SaleProduct> it = saleProducts.iterator();
 		while (it.hasNext() && res == null) {
 			SaleProduct temp = it.next();
-			if (temp.getSaleProductName().equalsIgnoreCase(name)) {
+			if (temp.getProductName().equalsIgnoreCase(productName)) {
 				res = temp;
 			}
 		}
@@ -32,12 +32,12 @@ public class SaleProductContainer {
 	}
 
 	// Dette stykke kode er taget fra Anders gruppe i miniprojekt design
-	public SaleProduct findSaleProductByID(int id) {
+	public SaleProduct findSaleProductByID(int productID) {
 		SaleProduct res = null;
 		Iterator<SaleProduct> it = saleProducts.iterator();
 		while (it.hasNext() && res == null) {
 			SaleProduct temp = it.next();
-			if (temp.getSaleProductNumber() == id) {
+			if (temp.getProductID() == productID) {
 				res = temp;
 			}
 		}
