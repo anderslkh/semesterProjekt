@@ -42,14 +42,6 @@ public class SaleOrder {
 		this.saleOrderID = saleOrderID;
 	}
 
-	public ArrayList<SaleOrderLine> getSaleOrderLines() {
-		return saleOrderLines;
-	}
-
-	public void setSaleOrderLines(ArrayList<SaleOrderLine> saleOrderLines) {
-		this.saleOrderLines = saleOrderLines;
-	}
-
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -65,6 +57,4 @@ public class SaleOrder {
 	public void setPaymentMethod(int paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-	
-	
 }
