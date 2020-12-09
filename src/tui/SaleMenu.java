@@ -50,7 +50,7 @@ public class SaleMenu {
 		return choice;
 	}
 
-	private void createSale() {
+	private void createSaleOrder() {
 		saleController.enterSaleProduct(productName, productID, madeByCompany, description, productNumber, productBarcode, price, dateOfPrice);enterSaleProduct();
 		saleController.addCustomerToSale();
 		saleController.choosePaymentMethod();

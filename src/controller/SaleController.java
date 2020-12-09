@@ -1,11 +1,14 @@
 package controller;
 
+import java.util.ArrayList;
+
 import model.*;
 
 public class SaleController {
 	private SaleContainer saleContainer;
 	private SaleOrder currSaleOrder;
 	private SaleProductContainer saleProductContainer;
+	private ArrayList<SaleProduct> chosenProducts;
 
 	public SaleController() {
 		saleContainer = SaleContainer.getInstance();
