@@ -33,6 +33,7 @@ public class SaleController {
 		return null;
 	}
 
+
 	public SaleOrder createReceipt() {
 		return null;
 	}

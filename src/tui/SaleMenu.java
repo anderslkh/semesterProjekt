@@ -51,7 +51,10 @@ public class SaleMenu {
 	}
 
 	private void createSale() {
-
+		saleController.enterSaleProduct(productName, productID, madeByCompany, description, productNumber, productBarcode, price, dateOfPrice);enterSaleProduct();
+		saleController.addCustomerToSale();
+		saleController.choosePaymentMethod();
+		saleController.createReceipt();
 	}
 
 	private void findSale() {
