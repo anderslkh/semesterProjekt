@@ -8,7 +8,7 @@ public class Customer {
 	private String address;
 	private String zipCode;
 	private String city;
-	
+
 	public Customer(int customerID, String name, String phone, String mail, String address, String zipCode,
 			String city) {
 		this.customerID = customerID;
@@ -75,8 +75,5 @@ public class Customer {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
-	
-	
-	
+
 }

@@ -60,10 +60,10 @@ public class SaleMenu {
 		
 	}
 	
-	private void createSaleOrder(String productName) {
+	private void createSaleOrder(String productName, int productID, int quantity, String phone) {
 		saleController.searchSaleProductByName(productName);
-		saleController.enterSaleProduct(productName, productID, madeByCompany, description, productNumber, productBarcode, price, dateOfPrice);
-		saleController.addCustomerToSale();
+		saleController.enterSaleProduct(productID, quantity);
+		saleController.addCustomerToSale(phone);
 		saleController.choosePaymentMethod();
 		saleController.createReceipt();
 	}

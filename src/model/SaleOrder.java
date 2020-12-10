@@ -54,7 +54,7 @@ public class SaleOrder {
 		this.paymentMethod = paymentMethod;
 	}
 	
-	public void addSaleOrderLine() {
-		
+	public void addSaleOrderLine(SaleOrderLine saleOrderLine) {
+		saleOrderLines.add(saleOrderLine);
 	}
 }

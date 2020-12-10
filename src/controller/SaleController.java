@@ -11,6 +11,7 @@ public class SaleController {
 	private SaleProductController saleProductController;
 	private ArrayList<SaleProduct> chosenProducts;
 	private Employee testEmployee;
+	private Customer customer;
 
 	public SaleController() {
 		saleContainer = SaleContainer.getInstance();
@@ -19,14 +20,13 @@ public class SaleController {
 	}
 
 // taget fra sidste projekt
-	public void enterSaleProduct(int productID, int quantity, ) {
+	public void enterSaleProduct(int productID, int quantity) {
 		SaleProduct saleProduct = saleProductController.findSaleProductByID(productID);
 		SaleOrderLine saleOrderLine = new SaleOrderLine(saleProduct, quantity);
 		if(currSaleOrder == null) {
 			currSaleOrder = new SaleOrder(testEmployee);
 		}
 		currSaleOrder.addSaleOrderLine(saleOrderLine);
-		
 	}
 
 	public SaleProduct searchSaleProductByName(String productName) {
@@ -37,8 +37,8 @@ public class SaleController {
 		return saleProductController.findSaleProductByID(productID);
 	}
 
-	public Customer addCustomerToSale() {
-
+	public Customer addCustomerToSale(String phone) {
+		
 		return null;
 	}
 
