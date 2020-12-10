@@ -11,7 +11,7 @@ public class SaleController {
 	private SaleProductController saleProductController;
 	private ArrayList<SaleProduct> chosenProducts;
 	private Employee testEmployee;
-	private Customer customer;
+	private CustomerController customerController;
 
 	public SaleController() {
 		saleContainer = SaleContainer.getInstance();
@@ -23,7 +23,7 @@ public class SaleController {
 	public void enterSaleProduct(int productID, int quantity) {
 		SaleProduct saleProduct = saleProductController.findSaleProductByID(productID);
 		SaleOrderLine saleOrderLine = new SaleOrderLine(saleProduct, quantity);
-		if(currSaleOrder == null) {
+		if (currSaleOrder == null) {
 			currSaleOrder = new SaleOrder(testEmployee);
 		}
 		currSaleOrder.addSaleOrderLine(saleOrderLine);
@@ -38,10 +38,10 @@ public class SaleController {
 	}
 
 	public Customer addCustomerToSale(String phone) {
-		
-		return null;
+		customer = customerController.findCustomerByPhone(phone);
+		currSaleOrder.setCustomer(customer);
+		return customer;
 	}
-
 
 	public SaleOrder createReceipt() {
 		currSaleOrder = null;
@@ -51,6 +51,5 @@ public class SaleController {
 	public int choosePaymentMethod() {
 		return 0;
 	}
-	
-	
+
 }
