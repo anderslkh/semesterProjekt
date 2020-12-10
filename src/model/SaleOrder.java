@@ -12,6 +12,7 @@ public class SaleOrder {
 	public SaleOrder(Employee employee) {
 		this.employee = employee;
 		saleOrderLines = new ArrayList<>();
+		paymentMethod = 0;
 	}
 
 	public int getSaleID() {

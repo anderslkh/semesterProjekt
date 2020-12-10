@@ -38,18 +38,18 @@ public class SaleController {
 	}
 
 	public Customer addCustomerToSale(String phone) {
-		customer = customerController.findCustomerByPhone(phone);
+		Customer customer = customerController.findCustomerByPhone(phone);
 		currSaleOrder.setCustomer(customer);
 		return customer;
 	}
 
-	public SaleOrder createReceipt() {
-		currSaleOrder = null;
-		return null;
+	public void choosePaymentMethod(int paymentMethod) {
+		currSaleOrder.setPaymentMethod(paymentMethod);
 	}
-
-	public int choosePaymentMethod() {
-		return 0;
+	
+	public SaleOrder createReceipt() {
+		saleContainer.addSaleOrder(currSaleOrder);
+		return currSaleOrder;
 	}
 
 }

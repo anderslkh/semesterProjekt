@@ -1,9 +1,8 @@
 package tui;
 
-import java.util.List;
+
 import controller.*;
-import model.SaleOrder;
-import model.SaleProduct;
+
 
 public class SaleMenu {
 	private SaleController saleController;
@@ -22,7 +21,7 @@ public class SaleMenu {
 			int choice = writeSaleMenu();
 			switch (choice) {
 			case 1:
-
+				createSaleOrder(productName, productID, quantity, phone, paymentMethod);
 				// create sale
 				// needs to be implemented VV
 				// createSale();
@@ -52,31 +51,31 @@ public class SaleMenu {
 		return choice;
 	}
 
-	private SaleProduct searchSaleProductByName(String productName) {
-		return saleController.searchSaleProductByName(productName);
-	}
+//	private SaleProduct searchSaleProductByName(String productName) {
+//		return saleController.searchSaleProductByName(productName);
+//	}
+//	
+//	private void enterSaleProduct(int productID, int quantity) {
+//		
+//	}
 	
-	private void enterSaleProduct(int productID, int quantity) {
-		
-	}
-	
-	private void createSaleOrder(String productName, int productID, int quantity, String phone) {
+	private void createSaleOrder(String productName, int productID, int quantity, String phone, int paymentMethod) {
 		saleController.searchSaleProductByName(productName);
 		saleController.enterSaleProduct(productID, quantity);
 		saleController.addCustomerToSale(phone);
-		saleController.choosePaymentMethod();
+		saleController.choosePaymentMethod(paymentMethod);
 		saleController.createReceipt();
 	}
 
-	private void showDetails(SaleOrder saleOrder) {
-		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
-		System.out.println("Employee: " + saleOrder.getEmployee());
-		System.out.println("Saleproduct: " + saleOrder.getPostalCode());
-		System.out.println("Quantity: " + saleOrder.getCity());
-		System.out.println("Phone: " + saleOrder.getPhone());
-	}
-
-	private void createReciept() {
-
-	}
+//	private void showDetails(SaleOrder saleOrder) {
+//		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
+//		System.out.println("Employee: " + saleOrder.getEmployee());
+//		System.out.println("Saleproduct: " + saleOrder.getPostalCode());
+//		System.out.println("Quantity: " + saleOrder.getCity());
+//		System.out.println("Phone: " + saleOrder.getPhone());
+//	}
+//
+//	private void createReciept() {
+//
+//	}
 }

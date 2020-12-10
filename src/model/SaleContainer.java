@@ -6,9 +6,11 @@ import java.util.Iterator;
 public class SaleContainer {
 	private static SaleContainer instance;
 	private ArrayList<SaleOrder> saleOrders;
+	private int saleID;
 
 	private SaleContainer() {
 		saleOrders = new ArrayList<>();
+		saleID = 1;
 	}
 
 	public static SaleContainer getInstance() {
@@ -19,6 +21,8 @@ public class SaleContainer {
 	}
 
 	public void addSaleOrder(SaleOrder saleOrder) {
+		saleOrder.setSaleID(saleID);
+		saleID++;
 		saleOrders.add(saleOrder);
 	}
 
