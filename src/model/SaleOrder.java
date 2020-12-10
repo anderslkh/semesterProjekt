@@ -9,13 +9,9 @@ public class SaleOrder {
 	private Customer customer;
 	private int paymentMethod;
 
-	public SaleOrder(int saleOrderID, Employee employee, Customer customer,
-			int paymentMethod) {
-		this.saleOrderID = saleOrderID;
+	public SaleOrder(Employee employee) {
 		this.employee = employee;
 		saleOrderLines = new ArrayList<>();
-		this.customer = customer;
-		this.paymentMethod = paymentMethod;
 	}
 
 	public int getSaleID() {
@@ -56,5 +52,9 @@ public class SaleOrder {
 
 	public void setPaymentMethod(int paymentMethod) {
 		this.paymentMethod = paymentMethod;
+	}
+	
+	public void addSaleOrderLine() {
+		
 	}
 }

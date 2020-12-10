@@ -8,27 +8,33 @@ public class SaleController {
 	private SaleContainer saleContainer;
 	private SaleOrder currSaleOrder;
 	private SaleProductContainer saleProductContainer;
+	private SaleProductController saleProductController;
 	private ArrayList<SaleProduct> chosenProducts;
+	private Employee testEmployee;
 
 	public SaleController() {
 		saleContainer = SaleContainer.getInstance();
 		saleProductContainer = SaleProductContainer.getInstance();
+		testEmployee = new Employee();
 	}
 
 // taget fra sidste projekt
-	public void enterSaleProduct(String productName, int productID, String madeByCompany, String description,
-			int productNumber, String productBarcode, int price, String dateOfPrice) {
-		SaleProduct saleProduct = new SaleProduct(productName, productID, madeByCompany, description, productNumber,
-				productBarcode, price, dateOfPrice);
-		saleProductContainer.addSaleProduct(saleProduct);
+	public void enterSaleProduct(int productID, int quantity, ) {
+		SaleProduct saleProduct = saleProductController.findSaleProductByID(productID);
+		SaleOrderLine saleOrderLine = new SaleOrderLine(saleProduct, quantity);
+		if(currSaleOrder == null) {
+			currSaleOrder = new SaleOrder(testEmployee);
+		}
+		currSaleOrder.addSaleOrderLine(saleOrderLine);
+		
 	}
 
 	public SaleProduct searchSaleProductByName(String productName) {
-		return saleProductContainer.findSaleProductByName(productName);
+		return saleProductController.findSaleProductByName(productName);
 	}
 
 	public SaleProduct searchSaleProductByID(int productID) {
-		return saleProductContainer.findSaleProductByID(productID);
+		return saleProductController.findSaleProductByID(productID);
 	}
 
 	public Customer addCustomerToSale() {
@@ -38,10 +44,13 @@ public class SaleController {
 
 
 	public SaleOrder createReceipt() {
+		currSaleOrder = null;
 		return null;
 	}
 
 	public int choosePaymentMethod() {
 		return 0;
 	}
+	
+	
 }

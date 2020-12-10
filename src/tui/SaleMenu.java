@@ -3,6 +3,7 @@ package tui;
 import java.util.List;
 import controller.*;
 import model.SaleOrder;
+import model.SaleProduct;
 
 public class SaleMenu {
 	private SaleController saleController;
@@ -21,6 +22,7 @@ public class SaleMenu {
 			int choice = writeSaleMenu();
 			switch (choice) {
 			case 1:
+
 				// create sale
 				// needs to be implemented VV
 				// createSale();
@@ -50,15 +52,20 @@ public class SaleMenu {
 		return choice;
 	}
 
-	private void createSaleOrder() {
-		saleController.enterSaleProduct(productName, productID, madeByCompany, description, productNumber, productBarcode, price, dateOfPrice);enterSaleProduct();
+	private SaleProduct searchSaleProductByName(String productName) {
+		return saleController.searchSaleProductByName(productName);
+	}
+	
+	private void enterSaleProduct(int productID, int quantity) {
+		
+	}
+	
+	private void createSaleOrder(String productName) {
+		saleController.searchSaleProductByName(productName);
+		saleController.enterSaleProduct(productName, productID, madeByCompany, description, productNumber, productBarcode, price, dateOfPrice);
 		saleController.addCustomerToSale();
 		saleController.choosePaymentMethod();
 		saleController.createReceipt();
-	}
-
-	private void findSale() {
-
 	}
 
 	private void showDetails(SaleOrder saleOrder) {
