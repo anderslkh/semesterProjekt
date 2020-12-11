@@ -26,14 +26,14 @@ public class LoanMenu {
 				break;
 			case 2:
 				//find loan
-				System.out.println("Feature not yet implemented.");
+				System.out.println("Funktion er ikke implementeret endnu");
 				break;
 			case 3:
-				System.out.println("Bye!");
+				System.out.println("Farvel!");
 				exit = true;
 				break;
 			default:
-				System.out.println("Not an option");
+				System.out.println("Ikke et muligt valg!");
 				break;
 			}
 		}
@@ -41,11 +41,11 @@ public class LoanMenu {
 
 	private int writeLoanMenu() {
 		int choice = 0;
-		System.out.println("\n*** Loan Menu ***");
-		System.out.println(" (1) Create a loan");
-		System.out.println(" (2) Find a loan");
-		System.out.println(" (3) Exit");
-		choice = TextInput.inputNumber("\nPick an option");
+		System.out.println("\n*** Udlånsmenu ***");
+		System.out.println(" (1) Opret et lån");
+		System.out.println(" (2) Find et lån");
+		System.out.println(" (3) Afslut");
+		choice = TextInput.inputNumber("\nVælg en mulighed!");
 		return choice;
 	}
 }

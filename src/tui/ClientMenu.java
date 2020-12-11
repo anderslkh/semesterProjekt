@@ -26,22 +26,22 @@ public class ClientMenu {
 				break;
 			case 2:
 				//create employee
-				System.out.println("Feature not yet implemented.");
+				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 3:
 				//find customer
-				System.out.println("Feature not yet implemented.");
+				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 4:
 				//find employee
-				System.out.println("Feature not yet implemented.");
+				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 5:
-				System.out.println("Bye!");
+				System.out.println("Farvel!");
 				exit = true;
 				break;
 			default:
-				System.out.println("Not an option");
+				System.out.println("Ikke et muligt valg!");
 				break;
 			}
 		}
@@ -49,13 +49,13 @@ public class ClientMenu {
 
 	private int writeClientMenu() {
 		int choice = 0;
-		System.out.println("\n*** Loan Menu ***");
-		System.out.println(" (1) Create a customer");
-		System.out.println(" (2) Create an employee");
-		System.out.println(" (3) Find a customer");
-		System.out.println(" (4) Find an employee");
-		System.out.println(" (5) Exit");
-		choice = TextInput.inputNumber("\nPick an option");
+		System.out.println("\n*** Klientmenu ***");
+		System.out.println(" (1) Opret en kunde");
+		System.out.println(" (2) Opret en medarbejder");
+		System.out.println(" (3) Find en kunde");
+		System.out.println(" (4) Find en medarbejder");
+		System.out.println(" (5) Afslut");
+		choice = TextInput.inputNumber("\nVælg en mulighed!");
 		return choice;
 	}
 }
