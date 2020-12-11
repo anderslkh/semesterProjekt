@@ -21,8 +21,7 @@ public class SaleMenu {
 			int choice = writeSaleMenu();
 			switch (choice) {
 			case 1:
-				searchSaleProductByName();
-				
+				createSaleOrder();
 				break;
 			case 2:
 				// find sale
@@ -48,26 +47,18 @@ public class SaleMenu {
 		choice = TextInput.inputNumber("\nPick an option");
 		return choice;
 	}
-
-//	private SaleProduct searchSaleProductByName(String productName) {
-//		return saleController.searchSaleProductByName(productName);
-//	}
-//	
-//	private void enterSaleProduct(int productID, int quantity) {
-//		
-//	}
 	
-	private void createSaleOrder(String productName, int productID, int quantity, String phone, int paymentMethod) {
-		saleController.searchSaleProductByName(productName);
-		saleController.enterSaleProduct(productID, quantity);
-		saleController.addCustomerToSale(phone);
-		saleController.choosePaymentMethod(paymentMethod);
-		saleController.createReceipt();
+	private void createSaleOrder() {
+		searchSaleProductByName();
+		enterSaleProduct();
+		addCustomerToSale();
+		choosePaymentMethod();
+		createReceipt();
 	}
 
 	private void searchSaleProductByName() {
 		String productName = TextInput.inputString("Product name");
-;		saleController.searchSaleProductByName(productName);
+		saleController.searchSaleProductByName(productName);
 	}
 	
 	private void enterSaleProduct() {
@@ -86,7 +77,9 @@ public class SaleMenu {
 		saleController.choosePaymentMethod(paymentMethod);
 	}
 	
-	
+	private void createReceipt() {
+		saleController.createReceipt();
+	}
 	
 //	private void showDetails(SaleOrder saleOrder) {
 //		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
@@ -94,9 +87,5 @@ public class SaleMenu {
 //		System.out.println("Saleproduct: " + saleOrder.getPostalCode());
 //		System.out.println("Quantity: " + saleOrder.getCity());
 //		System.out.println("Phone: " + saleOrder.getPhone());
-//	}
-//
-//	private void createReciept() {
-//
 //	}
 }
