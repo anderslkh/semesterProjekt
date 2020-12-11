@@ -1,6 +1,5 @@
 package tui;
 
-import model.SaleContainer;
 import model.SaleProduct;
 import model.Customer;
 import model.CustomerContainer;
