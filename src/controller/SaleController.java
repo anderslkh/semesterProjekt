@@ -18,10 +18,13 @@ public class SaleController {
 		saleProductContainer = SaleProductContainer.getInstance();
 		saleProductController = new SaleProductController();
 		customerController = new CustomerController();
-		
-		testEmployee = new Employee();
+		testEmployee = new Employee("Bob");
 	}
 
+	public void createNewOrder() {
+		currSaleOrder = new SaleOrder(testEmployee);
+	}
+	
 // taget fra sidste projekt
 	public void enterSaleProduct(int productID, int quantity) {
 		SaleProduct saleProduct = saleProductController.findSaleProductByID(productID);
@@ -30,10 +33,6 @@ public class SaleController {
 			currSaleOrder = new SaleOrder(testEmployee);
 		}
 		currSaleOrder.addSaleOrderLine(saleOrderLine);
-	}
-
-	public SaleProduct searchSaleProductByName(String productName) {
-		return saleProductController.findSaleProductByName(productName);
 	}
 
 	public SaleProduct searchSaleProductByID(int productID) {
@@ -53,6 +52,14 @@ public class SaleController {
 	public SaleOrder createReceipt() {
 		saleContainer.addSaleOrder(currSaleOrder);
 		return currSaleOrder;
+	}
+	
+	public SaleOrder getSaleOrder() {
+		return currSaleOrder;
+	}
+	
+	public void setEmployee() {
+		currSaleOrder.setEmployee(testEmployee);
 	}
 
 }

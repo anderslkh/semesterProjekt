@@ -19,19 +19,6 @@ public class SaleProductContainer {
 	}
 
 	// Dette stykke kode er taget fra Anders gruppe i miniprojekt design
-	public SaleProduct findSaleProductByName(String productName) {
-		SaleProduct res = null;
-		Iterator<SaleProduct> it = saleProducts.iterator();
-		while (it.hasNext() && res == null) {
-			SaleProduct temp = it.next();
-			if (temp.getProductName().equalsIgnoreCase(productName)) {
-				res = temp;
-			}
-		}
-		return res;
-	}
-
-	// Dette stykke kode er taget fra Anders gruppe i miniprojekt design
 	public SaleProduct findSaleProductByID(int productID) {
 		SaleProduct res = null;
 		Iterator<SaleProduct> it = saleProducts.iterator();
@@ -47,5 +34,4 @@ public class SaleProductContainer {
 	public void addSaleProduct(SaleProduct saleProduct) {
 		saleProducts.add(saleProduct);
 	}
-
 }

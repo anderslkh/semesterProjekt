@@ -8,10 +8,6 @@ public class SaleProductController {
 	public SaleProductController() {
 		saleProductContainer = SaleProductContainer.getInstance();
 	}
-
-	public SaleProduct findSaleProductByName(String productName) {
-		return saleProductContainer.findSaleProductByName(productName);
-	}
 	
 	public SaleProduct findSaleProductByID(int productID) {
 		return saleProductContainer.findSaleProductByID(productID);

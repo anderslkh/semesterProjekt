@@ -1,6 +1,8 @@
 package tui;
 
 import controller.*;
+import model.SaleOrder;
+import model.SaleOrderLine;
 
 public class SaleMenu {
 	private SaleController saleController;
@@ -20,6 +22,7 @@ public class SaleMenu {
 			switch (choice) {
 			case 1:
 				createSaleOrder();
+				printReceipt();
 				break;
 			case 2:
 				// find sale
@@ -47,27 +50,22 @@ public class SaleMenu {
 	}
 
 	private void createSaleOrder() {
-		searchSaleProductByName();
+		saleController.createNewOrder();
 		enterSaleProduct();
 		addCustomerToSale();
 		choosePaymentMethod();
 		createReceipt();
 	}
 
-	private void searchSaleProductByName() {
-		String productName = TextInput.inputString("Produktnavn");
-		saleController.searchSaleProductByName(productName);
-	}
-
 	private void enterSaleProduct() {
 		boolean done = false;
-		while(!done) {
+		while (!done) {
 			int productID = TextInput.inputNumber("Produkt-ID");
-			if(productID == 0) {
+			if (productID == 0) {
 				done = true;
 			} else {
 				int quantity = TextInput.inputNumber("Antal");
-				saleController.enterSaleProduct(productID, quantity);	
+				saleController.enterSaleProduct(productID, quantity);
 			}
 		}
 	}
@@ -85,6 +83,32 @@ public class SaleMenu {
 	private void createReceipt() {
 		saleController.createReceipt();
 	}
+
+	private void printReceipt() {
+		String paymentMethod = null;
+		SaleOrder currSaleOrder = saleController.getSaleOrder();
+		System.out.println("Produkter:");
+		for (SaleOrderLine ol : currSaleOrder.getSaleOrderLines()) {
+			System.out.println(ol.getProduct().getProductName());
+			System.out.println("Antal: " + ol.getQuantity());
+		}
+		System.out.println("\nSalgs-ID: " + currSaleOrder.getSaleOrderID());
+		System.out.println("Kunde: " + currSaleOrder.getCustomer().getName());
+		System.out.println("Du blev betjent af: " + currSaleOrder.getEmployee().getName());
+		if (currSaleOrder.getPaymentMethod() == 0) {
+			paymentMethod = "Kontant";
+		} else if (currSaleOrder.getPaymentMethod() == 1) {
+			paymentMethod = "Kortbetaling";
+		} else if (currSaleOrder.getPaymentMethod() == 2) {
+			paymentMethod = "Kredit";
+		}
+		System.out.println("Betalingsmetode: " + paymentMethod);
+	}
+	
+//	private void setEmployee() {
+//		SaleOrder currSaleOrder = saleController.getSaleOrder();
+//		currSaleOrder.set;
+//	}
 
 //	private void showDetails(SaleOrder saleOrder) {
 //		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());

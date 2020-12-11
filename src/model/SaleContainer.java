@@ -21,7 +21,7 @@ public class SaleContainer {
 	}
 
 	public void addSaleOrder(SaleOrder saleOrder) {
-		saleOrder.setSaleID(saleID);
+		saleOrder.setSaleOrderID(saleID);
 		saleID++;
 		saleOrders.add(saleOrder);
 	}
@@ -31,7 +31,7 @@ public class SaleContainer {
 		Iterator<SaleOrder> it = saleOrders.iterator();
 		while (it.hasNext() && res == null) {
 			SaleOrder temp = it.next();
-			if (temp.getSaleID() == saleOrderID) {
+			if (temp.getSaleOrderID() == saleOrderID) {
 				res = temp;
 			}
 		}

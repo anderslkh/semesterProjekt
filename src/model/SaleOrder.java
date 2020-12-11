@@ -15,14 +15,6 @@ public class SaleOrder {
 		paymentMethod = 0;
 	}
 
-	public int getSaleID() {
-		return saleOrderID;
-	}
-
-	public void setSaleID(int saleOrderID) {
-		this.saleOrderID = saleOrderID;
-	}
-
 	public Employee getEmployee() {
 		return employee;
 	}
@@ -59,4 +51,11 @@ public class SaleOrder {
 		saleOrderLines.add(saleOrderLine);
 	}
 
+	public ArrayList<SaleOrderLine> getSaleOrderLines() {
+		return saleOrderLines;
+	}
+
+	public void setSaleOrderLines(ArrayList<SaleOrderLine> saleOrderLines) {
+		this.saleOrderLines = saleOrderLines;
+	}
 }
