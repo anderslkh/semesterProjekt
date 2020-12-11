@@ -25,14 +25,14 @@ public class SaleMenu {
 				break;
 			case 2:
 				// find sale
-				System.out.println("Feature not yet implemented.");
+				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 3:
-				System.out.println("Bye!");
+				System.out.println("Farvel!");
 				exit = true;
 				break;
 			default:
-				System.out.println("Not an option");
+				System.out.println("Ikke et muligt valg!");
 				break;
 			}
 		}
@@ -40,11 +40,11 @@ public class SaleMenu {
 
 	private int writeSaleMenu() {
 		int choice = 0;
-		System.out.println("\n*** Loan Menu ***");
-		System.out.println(" (1) Create a sale");
-		System.out.println(" (2) Find a sale");
-		System.out.println(" (3) Exit");
-		choice = TextInput.inputNumber("\nPick an option");
+		System.out.println("\n*** Salgsmenu ***");
+		System.out.println(" (1) Opret salg");
+		System.out.println(" (2) Find et salg");
+		System.out.println(" (3) Afslut");
+		choice = TextInput.inputNumber("\nVælg en mulighed");
 		return choice;
 	}
 	
@@ -57,23 +57,23 @@ public class SaleMenu {
 	}
 
 	private void searchSaleProductByName() {
-		String productName = TextInput.inputString("Product name");
+		String productName = TextInput.inputString("Produktnavn");
 		saleController.searchSaleProductByName(productName);
 	}
 	
 	private void enterSaleProduct() {
-		int productID = TextInput.inputNumber("Product ID");
-		int quantity = TextInput.inputNumber("Quantity");
+		int productID = TextInput.inputNumber("Produkt-ID");
+		int quantity = TextInput.inputNumber("Antal");
 		saleController.enterSaleProduct(productID, quantity);
 	}
 	
 	private void addCustomerToSale() {
-		String phone = TextInput.inputString("Phonenumber");
+		String phone = TextInput.inputString("Telefonnummer");
 		saleController.addCustomerToSale(phone);
 	}
 	
 	private void choosePaymentMethod() {
-		int paymentMethod = TextInput.inputNumber("Payment method, 1-cash, 2-card, 3-credit");
+		int paymentMethod = TextInput.inputNumber("Betalingsmetode, 1-kontant, 2-kortbetaling, 3-kredit");
 		saleController.choosePaymentMethod(paymentMethod);
 	}
 	
