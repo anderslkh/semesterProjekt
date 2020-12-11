@@ -60,7 +60,7 @@ public class SaleMenu {
 	private void enterSaleProduct() {
 		boolean done = false;
 		while (!done) {
-			int productID = TextInput.inputNumber("Produkt-ID");
+			int productID = TextInput.inputNumber("Produkt-ID, Indtast 0 for at stoppe med at indtaste varer");
 			if (productID == 0) {
 				done = true;
 			} else {
@@ -104,7 +104,7 @@ public class SaleMenu {
 		}
 		System.out.println("Betalingsmetode: " + paymentMethod);
 	}
-	
+
 //	private void setEmployee() {
 //		SaleOrder currSaleOrder = saleController.getSaleOrder();
 //		currSaleOrder.set;
