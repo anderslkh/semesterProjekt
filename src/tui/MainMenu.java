@@ -33,11 +33,11 @@ public class MainMenu {
 				clientMenu.start();
 				break;
 			case 4:
-				System.out.println("Bye!");
+				System.out.println("Farvel!");
 				exit = true;
 				break;
 			default:
-				System.out.println("Not an option");
+				System.out.println("Ikke et muligt valg!");
 				break;
 			}
 		} 
@@ -45,12 +45,12 @@ public class MainMenu {
 	
 	private int writeMainMenu() {
 		int choice = 0;
-		System.out.println("\n*** Main Menu ***");
-		System.out.println(" (1) Sale Menu");
-		System.out.println(" (2) Loan Menu");
-		System.out.println(" (3) Client Menu");
-		System.out.println(" (4) Exit");
-		choice = TextInput.inputNumber("\nPick an option");
+		System.out.println("\n*** Hovedmenu ***");
+		System.out.println(" (1) Salgsmenu");
+		System.out.println(" (2) Udlånsmenu");
+		System.out.println(" (3) Klientmenu");
+		System.out.println(" (4) Afslut");
+		choice = TextInput.inputNumber("\nVælg en mulighed!");
 		return choice;
 	}
 }
