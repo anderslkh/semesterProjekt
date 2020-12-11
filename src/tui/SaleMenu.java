@@ -1,8 +1,6 @@
 package tui;
 
-
 import controller.*;
-
 
 public class SaleMenu {
 	private SaleController saleController;
@@ -47,7 +45,7 @@ public class SaleMenu {
 		choice = TextInput.inputNumber("\nVælg en mulighed");
 		return choice;
 	}
-	
+
 	private void createSaleOrder() {
 		searchSaleProductByName();
 		enterSaleProduct();
@@ -60,27 +58,34 @@ public class SaleMenu {
 		String productName = TextInput.inputString("Produktnavn");
 		saleController.searchSaleProductByName(productName);
 	}
-	
+
 	private void enterSaleProduct() {
-		int productID = TextInput.inputNumber("Produkt-ID");
-		int quantity = TextInput.inputNumber("Antal");
-		saleController.enterSaleProduct(productID, quantity);
+		boolean done = false;
+		while(!done) {
+			int productID = TextInput.inputNumber("Produkt-ID");
+			if(productID == 0) {
+				done = true;
+			} else {
+				int quantity = TextInput.inputNumber("Antal");
+				saleController.enterSaleProduct(productID, quantity);	
+			}
+		}
 	}
-	
+
 	private void addCustomerToSale() {
 		String phone = TextInput.inputString("Telefonnummer");
 		saleController.addCustomerToSale(phone);
 	}
-	
+
 	private void choosePaymentMethod() {
 		int paymentMethod = TextInput.inputNumber("Betalingsmetode, 1-kontant, 2-kortbetaling, 3-kredit");
 		saleController.choosePaymentMethod(paymentMethod);
 	}
-	
+
 	private void createReceipt() {
 		saleController.createReceipt();
 	}
-	
+
 //	private void showDetails(SaleOrder saleOrder) {
 //		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
 //		System.out.println("Employee: " + saleOrder.getEmployee());
