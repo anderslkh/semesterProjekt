@@ -21,10 +21,8 @@ public class SaleMenu {
 			int choice = writeSaleMenu();
 			switch (choice) {
 			case 1:
-				createSaleOrder(productName, productID, quantity, phone, paymentMethod);
-				// create sale
-				// needs to be implemented VV
-				// createSale();
+				searchSaleProductByName();
+				
 				break;
 			case 2:
 				// find sale
@@ -67,6 +65,29 @@ public class SaleMenu {
 		saleController.createReceipt();
 	}
 
+	private void searchSaleProductByName() {
+		String productName = TextInput.inputString("Product name");
+;		saleController.searchSaleProductByName(productName);
+	}
+	
+	private void enterSaleProduct() {
+		int productID = TextInput.inputNumber("Product ID");
+		int quantity = TextInput.inputNumber("Quantity");
+		saleController.enterSaleProduct(productID, quantity);
+	}
+	
+	private void addCustomerToSale() {
+		String phone = TextInput.inputString("Phonenumber");
+		saleController.addCustomerToSale(phone);
+	}
+	
+	private void choosePaymentMethod() {
+		int paymentMethod = TextInput.inputNumber("Payment method, 1-cash, 2-card, 3-credit");
+		saleController.choosePaymentMethod(paymentMethod);
+	}
+	
+	
+	
 //	private void showDetails(SaleOrder saleOrder) {
 //		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
 //		System.out.println("Employee: " + saleOrder.getEmployee());
