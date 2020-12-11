@@ -50,7 +50,7 @@ public class MainMenu {
 		System.out.println(" (2) Udlånsmenu");
 		System.out.println(" (3) Klientmenu");
 		System.out.println(" (4) Afslut");
-		choice = TextInput.inputNumber("\nIkke et muligt valg!");
+		choice = TextInput.inputNumber("\nVælg en mulighed!");
 		return choice;
 	}
 }
