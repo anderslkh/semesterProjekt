@@ -16,6 +16,9 @@ public class SaleController {
 	public SaleController() {
 		saleContainer = SaleContainer.getInstance();
 		saleProductContainer = SaleProductContainer.getInstance();
+		saleProductController = new SaleProductController();
+		customerController = new CustomerController();
+		
 		testEmployee = new Employee();
 	}
 

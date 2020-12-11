@@ -42,7 +42,7 @@ public class SaleMenu {
 		System.out.println(" (1) Opret salg");
 		System.out.println(" (2) Find et salg");
 		System.out.println(" (3) Afslut");
-		choice = TextInput.inputNumber("\nVælg en mulighed");
+		choice = TextInput.inputNumber("\nVï¿½lg en mulighed");
 		return choice;
 	}
 
@@ -78,7 +78,7 @@ public class SaleMenu {
 	}
 
 	private void choosePaymentMethod() {
-		int paymentMethod = TextInput.inputNumber("Betalingsmetode, 1-kontant, 2-kortbetaling, 3-kredit");
+		int paymentMethod = TextInput.inputNumber("Betalingsmetode(1-kontant, 2-kortbetaling, 3-kredit)");
 		saleController.choosePaymentMethod(paymentMethod);
 	}
 
