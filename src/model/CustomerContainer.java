@@ -27,7 +27,7 @@ public class CustomerContainer {
 		Iterator<Customer> it = customers.iterator();
 		while (it.hasNext() && res == null) {
 			Customer temp = it.next();
-			if (temp.getPhone() == phone) {
+			if (temp.getPhone().equals(phone)) {
 				res = temp;
 			}
 		}

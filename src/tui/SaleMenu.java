@@ -87,7 +87,7 @@ public class SaleMenu {
 	private void printReceipt() {
 		String paymentMethod = null;
 		SaleOrder currSaleOrder = saleController.getSaleOrder();
-		System.out.println("Produkter:");
+		System.out.println("\nProdukter:");
 		for (SaleOrderLine ol : currSaleOrder.getSaleOrderLines()) {
 			System.out.println(ol.getProduct().getProductName());
 			System.out.println("Antal: " + ol.getQuantity());

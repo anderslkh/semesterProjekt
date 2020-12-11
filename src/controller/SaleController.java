@@ -12,6 +12,7 @@ public class SaleController {
 	private ArrayList<SaleProduct> chosenProducts;
 	private Employee testEmployee;
 	private CustomerController customerController;
+	private Customer customer;
 
 	public SaleController() {
 		saleContainer = SaleContainer.getInstance();
