@@ -1,13 +1,8 @@
 package tui;
 
-import controller.LoanController;
-
 public class LoanMenu {
 
-	private LoanController loanController;
-
 	public LoanMenu() {
-		loanController = new LoanController();
 	}
 
 	public void start() {
@@ -20,12 +15,12 @@ public class LoanMenu {
 			int choice = writeLoanMenu();
 			switch (choice) {
 			case 1:
-				//create loan
-				//needs to be implemented VV
-				//createLoan();
+				// create loan
+				// needs to be implemented VV
+				// createLoan();
 				break;
 			case 2:
-				//find loan
+				// find loan
 				System.out.println("Funktion er ikke implementeret endnu");
 				break;
 			case 3:
@@ -41,11 +36,11 @@ public class LoanMenu {
 
 	private int writeLoanMenu() {
 		int choice = 0;
-		System.out.println("\n*** Udlånsmenu ***");
-		System.out.println(" (1) Opret et lån");
-		System.out.println(" (2) Find et lån");
+		System.out.println("\n*** Udlï¿½nsmenu ***");
+		System.out.println(" (1) Opret et lï¿½n");
+		System.out.println(" (2) Find et lï¿½n");
 		System.out.println(" (3) Afslut");
-		choice = TextInput.inputNumber("\nVælg en mulighed!");
+		choice = TextInput.inputNumber("\nVï¿½lg en mulighed!");
 		return choice;
 	}
 }

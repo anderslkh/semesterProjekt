@@ -2,6 +2,7 @@ package tui;
 
 public class MainMenu {
 	private SaleMenu saleMenu;
+	//ikke implementeret endnu
 	private LoanMenu loanMenu;
 	private ClientMenu clientMenu;
 	
@@ -47,10 +48,10 @@ public class MainMenu {
 		int choice = 0;
 		System.out.println("\n*** Hovedmenu ***");
 		System.out.println(" (1) Salgsmenu");
-		System.out.println(" (2) Udlånsmenu");
+		System.out.println(" (2) Udlï¿½nsmenu");
 		System.out.println(" (3) Klientmenu");
 		System.out.println(" (4) Afslut");
-		choice = TextInput.inputNumber("\nVælg en mulighed!");
+		choice = TextInput.inputNumber("\nVï¿½lg en mulighed!");
 		return choice;
 	}
 }

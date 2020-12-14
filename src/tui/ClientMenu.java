@@ -4,10 +4,7 @@ import controller.ClientController;
 
 public class ClientMenu {
 
-	private ClientController clientController;
-
 	public ClientMenu() {
-		clientController = new ClientController();
 	}
 
 	public void start() {
@@ -20,20 +17,20 @@ public class ClientMenu {
 			int choice = writeClientMenu();
 			switch (choice) {
 			case 1:
-				//create client
+				// create client
 				// needs to be implemented VV
 				// createCustomer();
 				break;
 			case 2:
-				//create employee
+				// create employee
 				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 3:
-				//find customer
+				// find customer
 				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 4:
-				//find employee
+				// find employee
 				System.out.println("Funktion er ikke implementeret endnu.");
 				break;
 			case 5:
@@ -55,7 +52,7 @@ public class ClientMenu {
 		System.out.println(" (3) Find en kunde");
 		System.out.println(" (4) Find en medarbejder");
 		System.out.println(" (5) Afslut");
-		choice = TextInput.inputNumber("\nVælg en mulighed!");
+		choice = TextInput.inputNumber("\nVï¿½lg en mulighed!");
 		return choice;
 	}
 }

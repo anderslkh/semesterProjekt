@@ -104,17 +104,4 @@ public class SaleMenu {
 		}
 		System.out.println("Betalingsmetode: " + paymentMethod);
 	}
-
-//	private void setEmployee() {
-//		SaleOrder currSaleOrder = saleController.getSaleOrder();
-//		currSaleOrder.set;
-//	}
-
-//	private void showDetails(SaleOrder saleOrder) {
-//		System.out.println("\nSale Order ID: " + saleOrder.getSaleID());
-//		System.out.println("Employee: " + saleOrder.getEmployee());
-//		System.out.println("Saleproduct: " + saleOrder.getPostalCode());
-//		System.out.println("Quantity: " + saleOrder.getCity());
-//		System.out.println("Phone: " + saleOrder.getPhone());
-//	}
 }
