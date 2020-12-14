@@ -14,7 +14,8 @@ public class SaleMenu {
 	public void start() {
 		saleMenu();
 	}
-
+	
+//menu er blevet genbrugt fra miniprojekt design fra Anders' program
 	private void saleMenu() {
 		boolean exit = false;
 		while (!exit) {
@@ -39,6 +40,7 @@ public class SaleMenu {
 		}
 	}
 
+	//er blevet genbrugt fra miniprojekt design fra Anders' program
 	private int writeSaleMenu() {
 		int choice = 0;
 		System.out.println("\n*** Salgsmenu ***");
@@ -76,7 +78,7 @@ public class SaleMenu {
 	}
 
 	private void choosePaymentMethod() {
-		int paymentMethod = TextInput.inputNumber("Betalingsmetode(1-kontant, 2-kortbetaling, 3-kredit)");
+		int paymentMethod = TextInput.inputNumber("Betalingsmetode(0-kontant, 1-kortbetaling, 2-kredit)");
 		saleController.choosePaymentMethod(paymentMethod);
 	}
 

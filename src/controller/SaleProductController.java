@@ -8,7 +8,7 @@ public class SaleProductController {
 	public SaleProductController() {
 		saleProductContainer = SaleProductContainer.getInstance();
 	}
-	
+
 	public SaleProduct findSaleProductByID(int productID) {
 		return saleProductContainer.findSaleProductByID(productID);
 	}

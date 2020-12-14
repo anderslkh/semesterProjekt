@@ -19,8 +19,7 @@ public class SaleController {
 	public void createNewOrder() {
 		currSaleOrder = new SaleOrder(testEmployee);
 	}
-	
-// taget fra sidste projekt
+
 	public void enterSaleProduct(int productID, int quantity) {
 		SaleProduct saleProduct = saleProductController.findSaleProductByID(productID);
 		SaleOrderLine saleOrderLine = new SaleOrderLine(saleProduct, quantity);
@@ -43,16 +42,16 @@ public class SaleController {
 	public void choosePaymentMethod(int paymentMethod) {
 		currSaleOrder.setPaymentMethod(paymentMethod);
 	}
-	
+
 	public SaleOrder createReceipt() {
 		saleContainer.addSaleOrder(currSaleOrder);
 		return currSaleOrder;
 	}
-	
+
 	public SaleOrder getSaleOrder() {
 		return currSaleOrder;
 	}
-	
+
 	public void setEmployee() {
 		currSaleOrder.setEmployee(testEmployee);
 	}
