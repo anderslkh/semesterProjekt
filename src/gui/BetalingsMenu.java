@@ -15,16 +15,17 @@ import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.table.DefaultTableModel;
 
 public class BetalingsMenu extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
-	private JTextField textField;
+	private JTextField txtTelefon;
 	private JTextField textField_1;
-	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTable table_1;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -82,7 +83,7 @@ public class BetalingsMenu extends JFrame {
 		contentPane.add(layeredPane, BorderLayout.CENTER);
 		
 		table = new JTable();
-		table.setBounds(10, 65, 485, 434);
+		table.setBounds(10, 74, 485, 438);
 		layeredPane.add(table);
 		
 		JTextPane txtpnValgteVarer = new JTextPane();
@@ -99,54 +100,97 @@ public class BetalingsMenu extends JFrame {
 		txtpnFindEksisterendeKunde.setBounds(536, 40, 220, 24);
 		layeredPane.add(txtpnFindEksisterendeKunde);
 		
-		textField = new JTextField();
-		textField.setBounds(536, 64, 220, 30);
-		layeredPane.add(textField);
-		textField.setColumns(10);
+		txtTelefon = new JTextField();
+		txtTelefon.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtTelefon.setText("Telefon");
+		txtTelefon.setBounds(536, 64, 220, 30);
+		layeredPane.add(txtTelefon);
+		txtTelefon.setColumns(10);
 		
 		JButton btnNewButton = new JButton("S\u00F8g");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
-		btnNewButton.setBounds(755, 64, 85, 29);
+		btnNewButton.setBounds(755, 64, 85, 30);
 		layeredPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Kortbetaling");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_1.setBounds(536, 466, 85, 21);
+		btnNewButton_1.setBounds(727, 356, 115, 24);
 		layeredPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("New button");
+		JButton btnNewButton_2 = new JButton("Print Kvittering");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 26));
 		btnNewButton_2.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_2.setBounds(707, 466, 85, 21);
+		btnNewButton_2.setBounds(536, 466, 317, 46);
 		layeredPane.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("New button");
+		JButton btnNewButton_3 = new JButton("OK");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_3.setBounds(610, 417, 85, 21);
+		btnNewButton_3.setBounds(665, 356, 52, 24);
 		layeredPane.add(btnNewButton_3);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(505, 418, 96, 19);
+		textField_1.setBounds(536, 356, 129, 24);
 		layeredPane.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(729, 437, 96, 19);
-		layeredPane.add(textField_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(658, 358, 96, 19);
+		textField_3.setBounds(665, 267, 175, 24);
 		layeredPane.add(textField_3);
 		
-		JTextPane textPane_1_1 = new JTextPane();
-		textPane_1_1.setBackground(Color.LIGHT_GRAY);
-		textPane_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		textPane_1_1.setBounds(524, 358, 96, 19);
-		layeredPane.add(textPane_1_1);
+		JTextPane txtpnSubtotal = new JTextPane();
+		txtpnSubtotal.setText("Subtotal");
+		txtpnSubtotal.setBackground(Color.LIGHT_GRAY);
+		txtpnSubtotal.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnSubtotal.setBounds(536, 267, 129, 24);
+		layeredPane.add(txtpnSubtotal);
 		
 		table_1 = new JTable();
-		table_1.setBounds(536, 161, 186, 130);
+		table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Navn", "Anders Hansen"},
+				{"Tlf nr", "12345678"},
+				{"Mail", "ahansen@yahoo.com"},
+				{"Adresse", "Boligstr\u00E6de 4"},
+				{"Postnummer", "9231"},
+				{"By", "K\u00F8benhavn"},
+			},
+			new String[] {
+				" ", "Kundeinformation"
+			}
+		));
+		table_1.getColumnModel().getColumn(0).setPreferredWidth(69);
+		table_1.getColumnModel().getColumn(1).setPreferredWidth(114);
+		table_1.setBounds(536, 148, 304, 96);
 		layeredPane.add(table_1);
+		
+		JTextPane txtpnKundeinformation = new JTextPane();
+		txtpnKundeinformation.setText("Kundeinformation");
+		txtpnKundeinformation.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnKundeinformation.setBackground(Color.LIGHT_GRAY);
+		txtpnKundeinformation.setBounds(536, 124, 304, 24);
+		layeredPane.add(txtpnKundeinformation);
+		
+		JTextPane txtpnSubtotal_1 = new JTextPane();
+		txtpnSubtotal_1.setText("Kontantbetaling");
+		txtpnSubtotal_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnSubtotal_1.setBackground(Color.LIGHT_GRAY);
+		txtpnSubtotal_1.setBounds(536, 332, 129, 24);
+		layeredPane.add(txtpnSubtotal_1);
+		
+		JTextPane txtpnSubtotal_1_1 = new JTextPane();
+		txtpnSubtotal_1_1.setText("Retur");
+		txtpnSubtotal_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnSubtotal_1_1.setBackground(Color.LIGHT_GRAY);
+		txtpnSubtotal_1_1.setBounds(536, 403, 129, 24);
+		layeredPane.add(txtpnSubtotal_1_1);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(536, 427, 129, 24);
+		layeredPane.add(textField);
 	}
 }
