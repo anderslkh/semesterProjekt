@@ -63,10 +63,6 @@ public class BetalingsMenu extends JFrame {
 		salgButton.setBackground(SystemColor.activeCaptionBorder);
 		panel.add(salgButton);
 		
-		JButton betalingButton = new JButton("Betaling");
-		betalingButton.setBackground(SystemColor.activeCaption);
-		panel.add(betalingButton);
-		
 		JButton opretKundeButton = new JButton("Opret kunde");
 		opretKundeButton.setBackground(SystemColor.activeCaptionBorder);
 		panel.add(opretKundeButton);
