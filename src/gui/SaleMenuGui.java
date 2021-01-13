@@ -31,6 +31,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JScrollBar;
 
 public class SaleMenuGui extends JFrame {
 
@@ -60,7 +61,7 @@ public class SaleMenuGui extends JFrame {
 	 */
 	public SaleMenuGui() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 600);
+		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -88,6 +89,7 @@ public class SaleMenuGui extends JFrame {
 		panel.add(udlånButton);
 
 		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setSize(new Dimension(1920, 0));
 		contentPane.add(layeredPane, BorderLayout.CENTER);
 
 		JTextPane vareTxtpn = new JTextPane();
@@ -100,24 +102,8 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn.setText("Vare");
 
-		JTextPane længdeTxtpn = new JTextPane();
-		længdeTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
-		længdeTxtpn.setEditable(false);
-		længdeTxtpn.setBackground(Color.LIGHT_GRAY);
-		længdeTxtpn.setBounds(10, 104, 96, 21);
-		layeredPane.add(længdeTxtpn);
-		længdeTxtpn.setPreferredSize(new Dimension(0, 19));
-		længdeTxtpn.setText("L\u00E6ngde");
-
-		JComboBox længdeComboBox = new JComboBox();
-		længdeComboBox.setBorder(null);
-		længdeComboBox.setBackground(Color.WHITE);
-		længdeComboBox.setBounds(10, 123, 96, 40);
-		layeredPane.add(længdeComboBox);
-		længdeComboBox
-				.setModel(new DefaultComboBoxModel(new String[] {"---", "1200mm", "2400mm", "3200mm", "3600mm", "4200mm"}));
-
 		vareNrTextField = new JTextField();
+		vareNrTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		vareNrTextField.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -128,12 +114,13 @@ public class SaleMenuGui extends JFrame {
 		vareNrTextField.setBorder(null);
 		vareNrTextField.setToolTipText("xd");
 		vareNrTextField.setBackground(Color.WHITE);
-		vareNrTextField.setBounds(10, 54, 96, 40);
+		vareNrTextField.setBounds(10, 54, 400, 40);
 		layeredPane.add(vareNrTextField);
 		vareNrTextField.setPreferredSize(new Dimension(0, 0));
 		vareNrTextField.setColumns(10);
 
 		txtIndtastAntal = new JTextField();
+		txtIndtastAntal.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtIndtastAntal.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -142,7 +129,7 @@ public class SaleMenuGui extends JFrame {
 		});
 		txtIndtastAntal.setBorder(null);
 		txtIndtastAntal.setBackground(Color.WHITE);
-		txtIndtastAntal.setBounds(10, 194, 96, 40);
+		txtIndtastAntal.setBounds(10, 622, 400, 40);
 		layeredPane.add(txtIndtastAntal);
 		txtIndtastAntal.setText("Indtast antal");
 		txtIndtastAntal.setColumns(10);
@@ -151,7 +138,7 @@ public class SaleMenuGui extends JFrame {
 		antalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		antalTxtpn.setEditable(false);
 		antalTxtpn.setBackground(Color.LIGHT_GRAY);
-		antalTxtpn.setBounds(10, 173, 96, 21);
+		antalTxtpn.setBounds(10, 591, 96, 21);
 		layeredPane.add(antalTxtpn);
 		antalTxtpn.setText("Antal");
 
@@ -164,7 +151,7 @@ public class SaleMenuGui extends JFrame {
 						return columnTypes[columnIndex];
 					}
 				});
-		table.setBounds(259, 56, 587, 218);
+		table.setBounds(576, 56, 870, 462);
 		layeredPane.add(table);
 
 		JTextPane vareTxtpn_1 = new JTextPane();
@@ -174,7 +161,7 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn_1.setEditable(false);
 		vareTxtpn_1.setBackground(Color.LIGHT_GRAY);
-		vareTxtpn_1.setBounds(259, 34, 587, 21);
+		vareTxtpn_1.setBounds(576, 34, 870, 21);
 		layeredPane.add(vareTxtpn_1);
 
 		JButton tilføjVareSalgButton = new JButton("Tilf\u00F8j");
@@ -184,30 +171,30 @@ public class SaleMenuGui extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
-						Integer.parseInt(txtIndtastAntal.getText()) });
+						Integer.parseInt(txtIndtastAntal.getText())});
 			}
 		});
-		tilføjVareSalgButton.setBounds(10, 244, 96, 30);
+		tilføjVareSalgButton.setBounds(420, 622, 120, 40);
 		layeredPane.add(tilføjVareSalgButton);
 
 		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 38));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
-		subTotalShowingTxtpn.setBounds(259, 401, 291, 60);
+		subTotalShowingTxtpn.setBounds(982, 690, 291, 60);
 		layeredPane.add(subTotalShowingTxtpn);
 
 		JButton gåTilBetalingButton = new JButton("G\u00E5 til betaling");
-//		gåTilBetalingButton.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				this.dispose();
-//				new BetalingsMenu().setVisible(true);
-//			}
-//		});
+		gåTilBetalingButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				new BetalingsMenu().setVisible(true);
+			}
+		});
 		
 		gåTilBetalingButton.setBackground(Color.LIGHT_GRAY);
 		gåTilBetalingButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		gåTilBetalingButton.setBounds(551, 401, 152, 60);
+		gåTilBetalingButton.setBounds(1283, 690, 152, 60);
 		layeredPane.add(gåTilBetalingButton);
 
 		JTextPane subTotalTxtpn = new JTextPane();
@@ -215,7 +202,79 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
 		subTotalTxtpn.setBackground(Color.LIGHT_GRAY);
-		subTotalTxtpn.setBounds(259, 370, 291, 30);
+		subTotalTxtpn.setBounds(982, 656, 291, 30);
 		layeredPane.add(subTotalTxtpn);
+		
+		JButton søgeVareSalgButton = new JButton("Søg");
+		søgeVareSalgButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		søgeVareSalgButton.setActionCommand("S\u00F8g");
+		søgeVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		søgeVareSalgButton.setBackground(Color.LIGHT_GRAY);
+		søgeVareSalgButton.setBounds(420, 64, 96, 30);
+		layeredPane.add(søgeVareSalgButton);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(185, 280, -62, 19);
+		layeredPane.add(textPane);
+		
+		JTextPane vareNavnTextField = new JTextPane();
+		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		vareNavnTextField.setBounds(10, 319, 400, 40);
+		layeredPane.add(vareNavnTextField);
+		
+		JTextPane madeByCompanyTextField = new JTextPane();
+		madeByCompanyTextField.setBounds(10, 401, 400, 40);
+		layeredPane.add(madeByCompanyTextField);
+		
+		JTextPane priceTextField = new JTextPane();
+		priceTextField.setBounds(10, 511, 400, 40);
+		layeredPane.add(priceTextField);
+		
+		JTextPane navnTxtpn = new JTextPane();
+		navnTxtpn.setText("Vare navn");
+		navnTxtpn.setPreferredSize(new Dimension(0, 0));
+		navnTxtpn.setMargin(new Insets(3, 3, 3, 0));
+		navnTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
+		navnTxtpn.setEditable(false);
+		navnTxtpn.setBackground(Color.LIGHT_GRAY);
+		navnTxtpn.setBounds(10, 291, 96, 21);
+		layeredPane.add(navnTxtpn);
+		
+		JTextPane producentTxtpn = new JTextPane();
+		producentTxtpn.setText("Producent");
+		producentTxtpn.setPreferredSize(new Dimension(0, 0));
+		producentTxtpn.setMargin(new Insets(3, 3, 3, 0));
+		producentTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
+		producentTxtpn.setEditable(false);
+		producentTxtpn.setBackground(Color.LIGHT_GRAY);
+		producentTxtpn.setBounds(10, 370, 96, 21);
+		layeredPane.add(producentTxtpn);
+		
+		JTextPane prisTxtpn = new JTextPane();
+		prisTxtpn.setText("Pris");
+		prisTxtpn.setPreferredSize(new Dimension(0, 0));
+		prisTxtpn.setMargin(new Insets(3, 3, 3, 0));
+		prisTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
+		prisTxtpn.setEditable(false);
+		prisTxtpn.setBackground(Color.LIGHT_GRAY);
+		prisTxtpn.setBounds(10, 480, 96, 21);
+		layeredPane.add(prisTxtpn);
+		
+		JList list = new JList();
+		list.setBounds(515, 503, -99, -112);
+		layeredPane.add(list);
+		
+		JComboBox vareListeComboBox = new JComboBox();
+		vareListeComboBox.setBounds(10, 95, 400, 160);
+		layeredPane.add(vareListeComboBox);
+		
+//		public String længdeComboBoxVærdi() {
+//			JComboBox længdeComboBox = null;
+//			String str = længdeComboBox.getSelectedItem().toString();
+//			return str;
+//		}
 	}
 }
