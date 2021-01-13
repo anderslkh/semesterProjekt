@@ -29,6 +29,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class SaleMenuGui extends JFrame {
 
@@ -113,9 +115,15 @@ public class SaleMenuGui extends JFrame {
 		længdeComboBox.setBounds(10, 123, 96, 40);
 		layeredPane.add(længdeComboBox);
 		længdeComboBox
-				.setModel(new DefaultComboBoxModel(new String[] { "1200mm", "2400mm", "3200mm", "3600mm", "4200mm" }));
+				.setModel(new DefaultComboBoxModel(new String[] {"---", "1200mm", "2400mm", "3200mm", "3600mm", "4200mm"}));
 
 		vareNrTextField = new JTextField();
+		vareNrTextField.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				vareNrTextField.setText("");
+			}
+		});
 		vareNrTextField.setText("Indtast vare nr.");
 		vareNrTextField.setBorder(null);
 		vareNrTextField.setToolTipText("xd");
@@ -126,6 +134,12 @@ public class SaleMenuGui extends JFrame {
 		vareNrTextField.setColumns(10);
 
 		txtIndtastAntal = new JTextField();
+		txtIndtastAntal.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtIndtastAntal.setText("");
+			}
+		});
 		txtIndtastAntal.setBorder(null);
 		txtIndtastAntal.setBackground(Color.WHITE);
 		txtIndtastAntal.setBounds(10, 194, 96, 40);
@@ -169,8 +183,8 @@ public class SaleMenuGui extends JFrame {
 		tilføjVareSalgButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[] {
-						Integer.parseInt(vareNrTextField.getText()), Integer.parseInt(txtIndtastAntal.getText())});
+				model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
+						Integer.parseInt(txtIndtastAntal.getText()) });
 			}
 		});
 		tilføjVareSalgButton.setBounds(10, 244, 96, 30);
@@ -184,6 +198,13 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(subTotalShowingTxtpn);
 
 		JButton gåTilBetalingButton = new JButton("G\u00E5 til betaling");
+//		gåTilBetalingButton.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				this.dispose();
+//				new BetalingsMenu().setVisible(true);
+//			}
+//		});
+		
 		gåTilBetalingButton.setBackground(Color.LIGHT_GRAY);
 		gåTilBetalingButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		gåTilBetalingButton.setBounds(551, 401, 152, 60);
