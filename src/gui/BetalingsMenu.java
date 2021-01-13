@@ -58,21 +58,21 @@ public class BetalingsMenu extends JFrame {
 		contentPane.add(layeredPane, BorderLayout.CENTER);
 		
 		table = new JTable();
-		table.setBounds(10, 102, 870, 460);
+		table.setBounds(10, 99, 870, 460);
 		layeredPane.add(table);
 		
 		JTextPane txtpnValgteVarer = new JTextPane();
 		txtpnValgteVarer.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnValgteVarer.setText("Valgte varer");
 		txtpnValgteVarer.setBackground(Color.LIGHT_GRAY);
-		txtpnValgteVarer.setBounds(10, 81, 870, 21);
+		txtpnValgteVarer.setBounds(10, 78, 870, 21);
 		layeredPane.add(txtpnValgteVarer);
 		
 		JTextPane txtpnFindEksisterendeKunde = new JTextPane();
 		txtpnFindEksisterendeKunde.setBackground(Color.LIGHT_GRAY);
 		txtpnFindEksisterendeKunde.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnFindEksisterendeKunde.setText("Find eksisterende kunde");
-		txtpnFindEksisterendeKunde.setBounds(924, 78, 220, 21);
+		txtpnFindEksisterendeKunde.setBounds(924, 78, 400, 21);
 		layeredPane.add(txtpnFindEksisterendeKunde);
 		
 		txtTelefon = new JTextField();
@@ -89,26 +89,27 @@ public class BetalingsMenu extends JFrame {
 		layeredPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Kortbetaling");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_1.setBounds(924, 444, 115, 40);
+		btnNewButton_1.setBounds(924, 470, 130, 40);
 		layeredPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Print Kvittering");
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_2.setBackground(SystemColor.textHighlight);
-		btnNewButton_2.setBounds(924, 615, 203, 46);
+		btnNewButton_2.setBounds(924, 617, 203, 46);
 		layeredPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("OK");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_3.setBounds(1324, 390, 52, 40);
+		btnNewButton_3.setBounds(1324, 407, 85, 40);
 		layeredPane.add(btnNewButton_3);
 		
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_1.setColumns(10);
-		textField_1.setBounds(924, 390, 400, 40);
+		textField_1.setBounds(924, 407, 400, 40);
 		layeredPane.add(textField_1);
 		
 		textField_3 = new JTextField();
@@ -154,19 +155,20 @@ public class BetalingsMenu extends JFrame {
 		txtpnSubtotal_1.setText("Kontantbetaling");
 		txtpnSubtotal_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnSubtotal_1.setBackground(Color.LIGHT_GRAY);
-		txtpnSubtotal_1.setBounds(924, 369, 400, 21);
+		txtpnSubtotal_1.setBounds(924, 386, 400, 21);
 		layeredPane.add(txtpnSubtotal_1);
 		
 		JTextPane txtpnSubtotal_1_1 = new JTextPane();
 		txtpnSubtotal_1_1.setText("Retur");
 		txtpnSubtotal_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnSubtotal_1_1.setBackground(Color.LIGHT_GRAY);
-		txtpnSubtotal_1_1.setBounds(924, 504, 400, 21);
+		txtpnSubtotal_1_1.setBounds(924, 533, 400, 21);
 		layeredPane.add(txtpnSubtotal_1_1);
 		
 		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField.setColumns(10);
-		textField.setBounds(924, 524, 400, 40);
+		textField.setBounds(924, 554, 400, 40);
 		layeredPane.add(textField);
 		
 		JButton btnBetaling = new JButton("Salg");
