@@ -67,27 +67,6 @@ public class SaleMenuGui extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 
-		JPanel panel = new JPanel();
-		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
-		flowLayout.setAlignment(FlowLayout.LEFT);
-		contentPane.add(panel, BorderLayout.NORTH);
-
-		JButton salgButton = new JButton("Salg");
-		salgButton.setBackground(SystemColor.activeCaption);
-		panel.add(salgButton);
-
-		JButton opretKundeButton = new JButton("Opret kunde");
-		opretKundeButton.setBackground(SystemColor.activeCaptionBorder);
-		panel.add(opretKundeButton);
-
-		JButton kvitteringButton = new JButton("Kvittering");
-		kvitteringButton.setBackground(SystemColor.activeCaptionBorder);
-		panel.add(kvitteringButton);
-
-		JButton udlånButton = new JButton("Udl\u00E5n");
-		udlånButton.setBackground(SystemColor.activeCaptionBorder);
-		panel.add(udlånButton);
-
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setSize(new Dimension(1920, 0));
 		contentPane.add(layeredPane, BorderLayout.CENTER);
@@ -96,7 +75,7 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		vareTxtpn.setBackground(Color.LIGHT_GRAY);
 		vareTxtpn.setEditable(false);
-		vareTxtpn.setBounds(10, 34, 96, 21);
+		vareTxtpn.setBounds(10, 122, 400, 21);
 		layeredPane.add(vareTxtpn);
 		vareTxtpn.setPreferredSize(new Dimension(0, 0));
 		vareTxtpn.setMargin(new Insets(3, 3, 3, 0));
@@ -114,7 +93,7 @@ public class SaleMenuGui extends JFrame {
 		vareNrTextField.setBorder(null);
 		vareNrTextField.setToolTipText("xd");
 		vareNrTextField.setBackground(Color.WHITE);
-		vareNrTextField.setBounds(10, 54, 400, 40);
+		vareNrTextField.setBounds(10, 146, 400, 40);
 		layeredPane.add(vareNrTextField);
 		vareNrTextField.setPreferredSize(new Dimension(0, 0));
 		vareNrTextField.setColumns(10);
@@ -138,7 +117,7 @@ public class SaleMenuGui extends JFrame {
 		antalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		antalTxtpn.setEditable(false);
 		antalTxtpn.setBackground(Color.LIGHT_GRAY);
-		antalTxtpn.setBounds(10, 591, 96, 21);
+		antalTxtpn.setBounds(10, 601, 96, 21);
 		layeredPane.add(antalTxtpn);
 		antalTxtpn.setText("Antal");
 
@@ -151,7 +130,7 @@ public class SaleMenuGui extends JFrame {
 						return columnTypes[columnIndex];
 					}
 				});
-		table.setBounds(576, 56, 870, 462);
+		table.setBounds(576, 137, 870, 462);
 		layeredPane.add(table);
 
 		JTextPane vareTxtpn_1 = new JTextPane();
@@ -161,7 +140,7 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn_1.setEditable(false);
 		vareTxtpn_1.setBackground(Color.LIGHT_GRAY);
-		vareTxtpn_1.setBounds(576, 34, 870, 21);
+		vareTxtpn_1.setBounds(576, 114, 870, 21);
 		layeredPane.add(vareTxtpn_1);
 
 		JButton tilføjVareSalgButton = new JButton("Tilf\u00F8j");
@@ -194,7 +173,7 @@ public class SaleMenuGui extends JFrame {
 		
 		gåTilBetalingButton.setBackground(Color.LIGHT_GRAY);
 		gåTilBetalingButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		gåTilBetalingButton.setBounds(1283, 690, 152, 60);
+		gåTilBetalingButton.setBounds(1273, 690, 200, 60);
 		layeredPane.add(gåTilBetalingButton);
 
 		JTextPane subTotalTxtpn = new JTextPane();
@@ -202,7 +181,7 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
 		subTotalTxtpn.setBackground(Color.LIGHT_GRAY);
-		subTotalTxtpn.setBounds(982, 656, 291, 30);
+		subTotalTxtpn.setBounds(982, 660, 291, 30);
 		layeredPane.add(subTotalTxtpn);
 		
 		JButton søgeVareSalgButton = new JButton("Søg");
@@ -213,7 +192,7 @@ public class SaleMenuGui extends JFrame {
 		søgeVareSalgButton.setActionCommand("S\u00F8g");
 		søgeVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		søgeVareSalgButton.setBackground(Color.LIGHT_GRAY);
-		søgeVareSalgButton.setBounds(420, 64, 96, 30);
+		søgeVareSalgButton.setBounds(420, 144, 120, 40);
 		layeredPane.add(søgeVareSalgButton);
 		
 		JTextPane textPane = new JTextPane();
@@ -230,7 +209,7 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(madeByCompanyTextField);
 		
 		JTextPane priceTextField = new JTextPane();
-		priceTextField.setBounds(10, 511, 400, 40);
+		priceTextField.setBounds(10, 505, 400, 40);
 		layeredPane.add(priceTextField);
 		
 		JTextPane navnTxtpn = new JTextPane();
@@ -240,7 +219,7 @@ public class SaleMenuGui extends JFrame {
 		navnTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		navnTxtpn.setEditable(false);
 		navnTxtpn.setBackground(Color.LIGHT_GRAY);
-		navnTxtpn.setBounds(10, 291, 96, 21);
+		navnTxtpn.setBounds(10, 298, 96, 21);
 		layeredPane.add(navnTxtpn);
 		
 		JTextPane producentTxtpn = new JTextPane();
@@ -250,7 +229,7 @@ public class SaleMenuGui extends JFrame {
 		producentTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		producentTxtpn.setEditable(false);
 		producentTxtpn.setBackground(Color.LIGHT_GRAY);
-		producentTxtpn.setBounds(10, 370, 96, 21);
+		producentTxtpn.setBounds(10, 380, 96, 21);
 		layeredPane.add(producentTxtpn);
 		
 		JTextPane prisTxtpn = new JTextPane();
@@ -260,16 +239,36 @@ public class SaleMenuGui extends JFrame {
 		prisTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		prisTxtpn.setEditable(false);
 		prisTxtpn.setBackground(Color.LIGHT_GRAY);
-		prisTxtpn.setBounds(10, 480, 96, 21);
+		prisTxtpn.setBounds(10, 483, 96, 21);
 		layeredPane.add(prisTxtpn);
 		
 		JList list = new JList();
 		list.setBounds(515, 503, -99, -112);
 		layeredPane.add(list);
 		
-		JComboBox vareListeComboBox = new JComboBox();
-		vareListeComboBox.setBounds(10, 95, 400, 160);
-		layeredPane.add(vareListeComboBox);
+		JButton salgButton = new JButton("Salg");
+		salgButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		salgButton.setBackground(SystemColor.activeCaption);
+		salgButton.setBounds(9, 10, 120, 40);
+		layeredPane.add(salgButton);
+		
+		JButton opretKundeButton = new JButton("Opret kunde");
+		opretKundeButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		opretKundeButton.setBackground(SystemColor.activeCaptionBorder);
+		opretKundeButton.setBounds(134, 10, 120, 40);
+		layeredPane.add(opretKundeButton);
+		
+		JButton kvitteringButton = new JButton("Kvittering");
+		kvitteringButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		kvitteringButton.setBackground(SystemColor.activeCaptionBorder);
+		kvitteringButton.setBounds(259, 10, 120, 40);
+		layeredPane.add(kvitteringButton);
+		
+		JButton udlånButton = new JButton("Udl\u00E5n");
+		udlånButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		udlånButton.setBackground(SystemColor.activeCaptionBorder);
+		udlånButton.setBounds(384, 10, 120, 40);
+		layeredPane.add(udlånButton);
 		
 //		public String længdeComboBoxVærdi() {
 //			JComboBox længdeComboBox = null;
