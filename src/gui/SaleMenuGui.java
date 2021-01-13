@@ -75,7 +75,7 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		vareTxtpn.setBackground(Color.LIGHT_GRAY);
 		vareTxtpn.setEditable(false);
-		vareTxtpn.setBounds(10, 122, 400, 21);
+		vareTxtpn.setBounds(10, 125, 400, 21);
 		layeredPane.add(vareTxtpn);
 		vareTxtpn.setPreferredSize(new Dimension(0, 0));
 		vareTxtpn.setMargin(new Insets(3, 3, 3, 0));
@@ -108,7 +108,7 @@ public class SaleMenuGui extends JFrame {
 		});
 		txtIndtastAntal.setBorder(null);
 		txtIndtastAntal.setBackground(Color.WHITE);
-		txtIndtastAntal.setBounds(10, 622, 400, 40);
+		txtIndtastAntal.setBounds(10, 512, 400, 40);
 		layeredPane.add(txtIndtastAntal);
 		txtIndtastAntal.setText("Indtast antal");
 		txtIndtastAntal.setColumns(10);
@@ -117,11 +117,12 @@ public class SaleMenuGui extends JFrame {
 		antalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		antalTxtpn.setEditable(false);
 		antalTxtpn.setBackground(Color.LIGHT_GRAY);
-		antalTxtpn.setBounds(10, 601, 96, 21);
+		antalTxtpn.setBounds(10, 491, 400, 21);
 		layeredPane.add(antalTxtpn);
 		antalTxtpn.setText("Antal");
 
 		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		table.setModel(
 				new DefaultTableModel(new Object[][] {}, new String[] { "Varenavn", "L\u00E6ngde", "Antal", "Pris" }) {
 					Class[] columnTypes = new Class[] { Integer.class, String.class, Integer.class, Integer.class };
@@ -130,7 +131,7 @@ public class SaleMenuGui extends JFrame {
 						return columnTypes[columnIndex];
 					}
 				});
-		table.setBounds(576, 137, 870, 462);
+		table.setBounds(576, 146, 870, 460);
 		layeredPane.add(table);
 
 		JTextPane vareTxtpn_1 = new JTextPane();
@@ -140,7 +141,7 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn_1.setEditable(false);
 		vareTxtpn_1.setBackground(Color.LIGHT_GRAY);
-		vareTxtpn_1.setBounds(576, 114, 870, 21);
+		vareTxtpn_1.setBounds(576, 125, 870, 21);
 		layeredPane.add(vareTxtpn_1);
 
 		JButton tilføjVareSalgButton = new JButton("Tilf\u00F8j");
@@ -153,14 +154,14 @@ public class SaleMenuGui extends JFrame {
 						Integer.parseInt(txtIndtastAntal.getText())});
 			}
 		});
-		tilføjVareSalgButton.setBounds(420, 622, 120, 40);
+		tilføjVareSalgButton.setBounds(410, 512, 120, 40);
 		layeredPane.add(tilføjVareSalgButton);
 
 		JTextPane subTotalShowingTxtpn = new JTextPane();
-		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 38));
+		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
-		subTotalShowingTxtpn.setBounds(982, 690, 291, 60);
+		subTotalShowingTxtpn.setBounds(576, 690, 291, 40);
 		layeredPane.add(subTotalShowingTxtpn);
 
 		JButton gåTilBetalingButton = new JButton("G\u00E5 til betaling");
@@ -173,7 +174,7 @@ public class SaleMenuGui extends JFrame {
 		
 		gåTilBetalingButton.setBackground(Color.LIGHT_GRAY);
 		gåTilBetalingButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		gåTilBetalingButton.setBounds(1273, 690, 200, 60);
+		gåTilBetalingButton.setBounds(867, 690, 145, 40);
 		layeredPane.add(gåTilBetalingButton);
 
 		JTextPane subTotalTxtpn = new JTextPane();
@@ -181,7 +182,7 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
 		subTotalTxtpn.setBackground(Color.LIGHT_GRAY);
-		subTotalTxtpn.setBounds(982, 660, 291, 30);
+		subTotalTxtpn.setBounds(576, 669, 291, 21);
 		layeredPane.add(subTotalTxtpn);
 		
 		JButton søgeVareSalgButton = new JButton("Søg");
@@ -192,7 +193,7 @@ public class SaleMenuGui extends JFrame {
 		søgeVareSalgButton.setActionCommand("S\u00F8g");
 		søgeVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		søgeVareSalgButton.setBackground(Color.LIGHT_GRAY);
-		søgeVareSalgButton.setBounds(420, 144, 120, 40);
+		søgeVareSalgButton.setBounds(410, 144, 120, 40);
 		layeredPane.add(søgeVareSalgButton);
 		
 		JTextPane textPane = new JTextPane();
@@ -201,15 +202,17 @@ public class SaleMenuGui extends JFrame {
 		
 		JTextPane vareNavnTextField = new JTextPane();
 		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		vareNavnTextField.setBounds(10, 319, 400, 40);
+		vareNavnTextField.setBounds(10, 272, 400, 40);
 		layeredPane.add(vareNavnTextField);
 		
 		JTextPane madeByCompanyTextField = new JTextPane();
-		madeByCompanyTextField.setBounds(10, 401, 400, 40);
+		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		madeByCompanyTextField.setBounds(10, 352, 400, 40);
 		layeredPane.add(madeByCompanyTextField);
 		
 		JTextPane priceTextField = new JTextPane();
-		priceTextField.setBounds(10, 505, 400, 40);
+		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		priceTextField.setBounds(10, 432, 400, 40);
 		layeredPane.add(priceTextField);
 		
 		JTextPane navnTxtpn = new JTextPane();
@@ -219,7 +222,7 @@ public class SaleMenuGui extends JFrame {
 		navnTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		navnTxtpn.setEditable(false);
 		navnTxtpn.setBackground(Color.LIGHT_GRAY);
-		navnTxtpn.setBounds(10, 298, 96, 21);
+		navnTxtpn.setBounds(10, 251, 400, 21);
 		layeredPane.add(navnTxtpn);
 		
 		JTextPane producentTxtpn = new JTextPane();
@@ -229,7 +232,7 @@ public class SaleMenuGui extends JFrame {
 		producentTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		producentTxtpn.setEditable(false);
 		producentTxtpn.setBackground(Color.LIGHT_GRAY);
-		producentTxtpn.setBounds(10, 380, 96, 21);
+		producentTxtpn.setBounds(10, 331, 400, 21);
 		layeredPane.add(producentTxtpn);
 		
 		JTextPane prisTxtpn = new JTextPane();
@@ -239,7 +242,7 @@ public class SaleMenuGui extends JFrame {
 		prisTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		prisTxtpn.setEditable(false);
 		prisTxtpn.setBackground(Color.LIGHT_GRAY);
-		prisTxtpn.setBounds(10, 483, 96, 21);
+		prisTxtpn.setBounds(10, 411, 400, 21);
 		layeredPane.add(prisTxtpn);
 		
 		JList list = new JList();
