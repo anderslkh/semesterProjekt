@@ -31,6 +31,18 @@ public class SaleProductContainer {
 		return res;
 	}
 
+	public SaleProduct findSaleProductByBarcode(String barcode) {
+		SaleProduct res = null;
+		Iterator<SaleProduct> it = saleProducts.iterator();
+		while (it.hasNext() && res == null) {
+			SaleProduct temp = it.next();
+			if (temp.getProductBarcode().equals(barcode)) {
+				res = temp;
+			}
+		}
+		return res;
+	}
+	
 	public void addSaleProduct(SaleProduct saleProduct) {
 		saleProducts.add(saleProduct);
 	}

@@ -72,25 +72,38 @@ public class BetalingsMenu extends JFrame {
 		txtpnFindEksisterendeKunde.setBackground(Color.LIGHT_GRAY);
 		txtpnFindEksisterendeKunde.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnFindEksisterendeKunde.setText("Find eksisterende kunde");
+<<<<<<< Updated upstream
 		txtpnFindEksisterendeKunde.setBounds(924, 78, 220, 21);
+=======
+		txtpnFindEksisterendeKunde.setBounds(1134, 170, 220, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(txtpnFindEksisterendeKunde);
 		
 		txtTelefon = new JTextField();
 		txtTelefon.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtTelefon.setText("Telefon");
+<<<<<<< Updated upstream
 		txtTelefon.setBounds(924, 99, 400, 40);
+=======
+		txtTelefon.setBounds(1134, 194, 220, 30);
+>>>>>>> Stashed changes
 		layeredPane.add(txtTelefon);
 		txtTelefon.setColumns(10);
 		
 		JButton btnNewButton = new JButton("S\u00F8g");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
+<<<<<<< Updated upstream
 		btnNewButton.setBounds(1324, 99, 85, 40);
+=======
+		btnNewButton.setBounds(1353, 194, 85, 30);
+>>>>>>> Stashed changes
 		layeredPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Kortbetaling");
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
+<<<<<<< Updated upstream
 		btnNewButton_1.setBounds(934, 440, 115, 40);
 		layeredPane.add(btnNewButton_1);
 		
@@ -98,29 +111,54 @@ public class BetalingsMenu extends JFrame {
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_2.setBackground(SystemColor.textHighlight);
 		btnNewButton_2.setBounds(924, 615, 203, 46);
+=======
+		btnNewButton_1.setBounds(1325, 486, 115, 24);
+		layeredPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Print Kvittering");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 26));
+		btnNewButton_2.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_2.setBounds(1134, 596, 317, 46);
+>>>>>>> Stashed changes
 		layeredPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("OK");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
+<<<<<<< Updated upstream
 		btnNewButton_3.setBounds(1324, 390, 52, 40);
+=======
+		btnNewButton_3.setBounds(1263, 486, 52, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(btnNewButton_3);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
+<<<<<<< Updated upstream
 		textField_1.setBounds(924, 390, 400, 40);
+=======
+		textField_1.setBounds(1134, 486, 129, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(textField_1);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
+<<<<<<< Updated upstream
 		textField_3.setBounds(924, 323, 400, 40);
+=======
+		textField_3.setBounds(1263, 397, 175, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(textField_3);
 		
 		JTextPane txtpnSubtotal = new JTextPane();
 		txtpnSubtotal.setText("Subtotal");
 		txtpnSubtotal.setBackground(Color.LIGHT_GRAY);
 		txtpnSubtotal.setFont(new Font("Tahoma", Font.BOLD, 14));
+<<<<<<< Updated upstream
 		txtpnSubtotal.setBounds(924, 302, 400, 21);
+=======
+		txtpnSubtotal.setBounds(1134, 397, 129, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(txtpnSubtotal);
 		
 		table_1 = new JTable();
@@ -140,33 +178,53 @@ public class BetalingsMenu extends JFrame {
 		));
 		table_1.getColumnModel().getColumn(0).setPreferredWidth(69);
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(114);
+<<<<<<< Updated upstream
 		table_1.setBounds(924, 183, 400, 96);
+=======
+		table_1.setBounds(1134, 278, 304, 96);
+>>>>>>> Stashed changes
 		layeredPane.add(table_1);
 		
 		JTextPane txtpnKundeinformation = new JTextPane();
 		txtpnKundeinformation.setText("Kundeinformation");
 		txtpnKundeinformation.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnKundeinformation.setBackground(Color.LIGHT_GRAY);
+<<<<<<< Updated upstream
 		txtpnKundeinformation.setBounds(924, 162, 400, 21);
+=======
+		txtpnKundeinformation.setBounds(1134, 249, 304, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(txtpnKundeinformation);
 		
 		JTextPane txtpnSubtotal_1 = new JTextPane();
 		txtpnSubtotal_1.setText("Kontantbetaling");
 		txtpnSubtotal_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnSubtotal_1.setBackground(Color.LIGHT_GRAY);
+<<<<<<< Updated upstream
 		txtpnSubtotal_1.setBounds(924, 369, 400, 21);
+=======
+		txtpnSubtotal_1.setBounds(1134, 462, 129, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(txtpnSubtotal_1);
 		
 		JTextPane txtpnSubtotal_1_1 = new JTextPane();
 		txtpnSubtotal_1_1.setText("Retur");
 		txtpnSubtotal_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnSubtotal_1_1.setBackground(Color.LIGHT_GRAY);
+<<<<<<< Updated upstream
 		txtpnSubtotal_1_1.setBounds(924, 504, 400, 21);
+=======
+		txtpnSubtotal_1_1.setBounds(1134, 533, 129, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(txtpnSubtotal_1_1);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
+<<<<<<< Updated upstream
 		textField.setBounds(924, 524, 400, 40);
+=======
+		textField.setBounds(1134, 557, 129, 24);
+>>>>>>> Stashed changes
 		layeredPane.add(textField);
 		
 		JButton btnBetaling = new JButton("Salg");
