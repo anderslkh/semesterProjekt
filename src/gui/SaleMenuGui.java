@@ -273,10 +273,5 @@ public class SaleMenuGui extends JFrame {
 		udlånButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlånButton);
 		
-//		public String længdeComboBoxVærdi() {
-//			JComboBox længdeComboBox = null;
-//			String str = længdeComboBox.getSelectedItem().toString();
-//			return str;
-//		}
 	}
 }
