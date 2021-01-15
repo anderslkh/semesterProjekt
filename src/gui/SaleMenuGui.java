@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import controller.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -39,6 +40,7 @@ public class SaleMenuGui extends JFrame {
 	private JTextField vareNrTextField;
 	private JTextField txtIndtastAntal;
 	private JTable table;
+	private SaleController saleController;
 
 	/**
 	 * Launch the application.
@@ -60,6 +62,8 @@ public class SaleMenuGui extends JFrame {
 	 * Create the frame.
 	 */
 	public SaleMenuGui() {
+		saleController = new SaleController();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -188,6 +192,7 @@ public class SaleMenuGui extends JFrame {
 		JButton findVareButton = new JButton("Find vare");
 		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+//				saleController.searchSaleProductByID(vareNrTextField.getText().parseInt());
 			}
 		});
 		findVareButton.setActionCommand("S\u00F8g");
