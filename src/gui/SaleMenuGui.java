@@ -89,7 +89,7 @@ public class SaleMenuGui extends JFrame {
 				vareNrTextField.setText("");
 			}
 		});
-		vareNrTextField.setText("Indtast vare nr.");
+		vareNrTextField.setText("Indtast varens ID.");
 		vareNrTextField.setBorder(null);
 		vareNrTextField.setToolTipText("xd");
 		vareNrTextField.setBackground(Color.WHITE);
@@ -144,18 +144,18 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setBounds(576, 125, 870, 21);
 		layeredPane.add(vareTxtpn_1);
 
-		JButton tilføjVareSalgButton = new JButton("Tilf\u00F8j");
-		tilføjVareSalgButton.setBackground(Color.LIGHT_GRAY);
-		tilføjVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		tilføjVareSalgButton.addActionListener(new ActionListener() {
+		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
+		tilfojVareSalgButton.setBackground(Color.LIGHT_GRAY);
+		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		tilfojVareSalgButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
 						Integer.parseInt(txtIndtastAntal.getText())});
 			}
 		});
-		tilføjVareSalgButton.setBounds(410, 512, 120, 40);
-		layeredPane.add(tilføjVareSalgButton);
+		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
+		layeredPane.add(tilfojVareSalgButton);
 
 		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -164,18 +164,18 @@ public class SaleMenuGui extends JFrame {
 		subTotalShowingTxtpn.setBounds(576, 690, 291, 40);
 		layeredPane.add(subTotalShowingTxtpn);
 
-		JButton gåTilBetalingButton = new JButton("G\u00E5 til betaling");
-		gåTilBetalingButton.addActionListener(new ActionListener() {
+		JButton betalingsButton = new JButton("G\u00E5 til betaling");
+		betalingsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				new BetalingsMenu().setVisible(true);
 			}
 		});
 		
-		gåTilBetalingButton.setBackground(Color.LIGHT_GRAY);
-		gåTilBetalingButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		gåTilBetalingButton.setBounds(867, 690, 145, 40);
-		layeredPane.add(gåTilBetalingButton);
+		betalingsButton.setBackground(Color.LIGHT_GRAY);
+		betalingsButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		betalingsButton.setBounds(867, 690, 145, 40);
+		layeredPane.add(betalingsButton);
 
 		JTextPane subTotalTxtpn = new JTextPane();
 		subTotalTxtpn.setText("Subtotal");
@@ -185,16 +185,16 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setBounds(576, 669, 291, 21);
 		layeredPane.add(subTotalTxtpn);
 		
-		JButton søgeVareSalgButton = new JButton("Søg");
-		søgeVareSalgButton.addActionListener(new ActionListener() {
+		JButton findVareButton = new JButton("Find vare");
+		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		søgeVareSalgButton.setActionCommand("S\u00F8g");
-		søgeVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		søgeVareSalgButton.setBackground(Color.LIGHT_GRAY);
-		søgeVareSalgButton.setBounds(410, 144, 120, 40);
-		layeredPane.add(søgeVareSalgButton);
+		findVareButton.setActionCommand("S\u00F8g");
+		findVareButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		findVareButton.setBackground(Color.LIGHT_GRAY);
+		findVareButton.setBounds(410, 144, 120, 40);
+		layeredPane.add(findVareButton);
 		
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(185, 280, -62, 19);
@@ -267,11 +267,11 @@ public class SaleMenuGui extends JFrame {
 		kvitteringButton.setBounds(259, 10, 120, 40);
 		layeredPane.add(kvitteringButton);
 		
-		JButton udlånButton = new JButton("Udl\u00E5n");
-		udlånButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		udlånButton.setBackground(SystemColor.activeCaptionBorder);
-		udlånButton.setBounds(384, 10, 120, 40);
-		layeredPane.add(udlånButton);
+		JButton udlanButton = new JButton("Udl\u00E5n");
+		udlanButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		udlanButton.setBackground(SystemColor.activeCaptionBorder);
+		udlanButton.setBounds(384, 10, 120, 40);
+		layeredPane.add(udlanButton);
 		
 	}
 }

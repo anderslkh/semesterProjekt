@@ -189,10 +189,10 @@ public class BetalingsMenu extends JFrame {
 		kvitteringButton.setBounds(259, 10, 120, 40);
 		layeredPane.add(kvitteringButton);
 		
-		JButton udlånButton = new JButton("Udl\u00E5n");
-		udlånButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		udlånButton.setBackground(SystemColor.activeCaptionBorder);
-		udlånButton.setBounds(384, 10, 120, 40);
-		layeredPane.add(udlånButton);
+		JButton udlanButton = new JButton("Udl\u00E5n");
+		udlanButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		udlanButton.setBackground(SystemColor.activeCaptionBorder);
+		udlanButton.setBounds(384, 10, 120, 40);
+		layeredPane.add(udlanButton);
 	}
 }
