@@ -3,6 +3,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import controller.*;
+import model.SaleProduct;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -190,11 +191,7 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(subTotalTxtpn);
 		
 		JButton findVareButton = new JButton("Find vare");
-		findVareButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				saleController.searchSaleProductByID(vareNrTextField.getText().parseInt());
-			}
-		});
+		
 		findVareButton.setActionCommand("S\u00F8g");
 		findVareButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		findVareButton.setBackground(new Color(95, 158, 160));
@@ -280,6 +277,15 @@ public class SaleMenuGui extends JFrame {
 		udlanButton.setBackground(SystemColor.inactiveCaption);
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
-		
+	
+		findVareButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SaleProduct saleProduct = null;
+				saleProduct = saleController.searchSaleProductByID(Integer.parseInt(vareNrTextField.getText()));
+				vareNavnTextField.setText(saleProduct.getProductName());
+				madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+				priceTextField.setText("" + saleProduct.getPrice());
+			}
+		});
 	}
 }
