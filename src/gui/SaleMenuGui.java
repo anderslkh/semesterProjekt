@@ -137,19 +137,6 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setBounds(576, 125, 870, 21);
 		layeredPane.add(vareTxtpn_1);
 
-		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
-		tilfojVareSalgButton.setBackground(new Color(95, 158, 160));
-		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		tilfojVareSalgButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
-						Integer.parseInt(txtIndtastAntal.getText())});
-			}
-		});
-		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
-		layeredPane.add(tilfojVareSalgButton);
-
 		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		subTotalShowingTxtpn.setEditable(false);
@@ -262,6 +249,44 @@ public class SaleMenuGui extends JFrame {
 		udlanButton.setBackground(SystemColor.inactiveCaption);
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
+		
+		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
+		tilfojVareSalgButton.setBackground(new Color(95, 158, 160));
+		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		tilfojVareSalgButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.addRow(new Object[] { (vareNavnTextField.getText()),
+						(madeByCompanyTextField.getText()),
+						(Integer.parseInt(txtIndtastAntal.getText())), 
+						(Double.parseDouble(priceTextField.getText()))});
+			}
+		});
+		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
+		layeredPane.add(tilfojVareSalgButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(576, 146, 870, 460);
+		layeredPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setFillsViewportHeight(true);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Vare navn", "L\u00E6ngde", "Antal", "Pris"
+			}
+		) {
+			Class[] columnTypes = new Class[] {
+				String.class, String.class, Integer.class, Double.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		scrollPane.setViewportView(table);
+		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		
 		
