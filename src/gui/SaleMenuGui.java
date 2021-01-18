@@ -43,6 +43,8 @@ public class SaleMenuGui extends JFrame {
 	private JTextField txtIndtastAntal;
 	private SaleController saleController;
 	private JTable table;
+	private int proID;
+	private int antal;
 
 	/**
 	 * Launch the application.
@@ -65,6 +67,8 @@ public class SaleMenuGui extends JFrame {
 	 */
 	public SaleMenuGui() {
 		saleController = new SaleController();
+		proID = 0;
+		antal = 0;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
@@ -290,4 +294,28 @@ public class SaleMenuGui extends JFrame {
 
 
 	}	
+//	:::søg vare knap:::
+//	findVareButton.addActionListener(new ActionListener() {
+//		public void actionPerformed(ActionEvent e) {
+	//			proID = Integer.parseInt(vareNrTextField.getText());
+//			SaleProduct saleProduct = null;
+//			saleProduct = saleController.searchSaleProductByID(proID);
+//			vareNavnTextField.setText(saleProduct.getProductName());
+//			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+//			priceTextField.setText("" + saleProduct.getPrice());
+//		}
+//	});
+	
+//	:::tilføj vare samt antal knap:::
+//		tilfojVareSalgButton.addActionListener(new ActionListener() {
+//		public void actionPerformed(ActionEvent e) {
+//			antal = Integer.parseint(txtIndastAntal.getText());
+//			DefaultTableModel model = (DefaultTableModel) table.getModel();
+//			model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
+//					Integer.parseInt(txtIndtastAntal.getText())});
+//			saleController.enterSaleProduct(proID, txtIn)
+//			proID = 0;
+//			antal = 0;
+//		}
+//	});
 }
