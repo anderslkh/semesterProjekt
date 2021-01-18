@@ -34,14 +34,15 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 
 public class SaleMenuGui extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField vareNrTextField;
 	private JTextField txtIndtastAntal;
-	private JTable table;
 	private SaleController saleController;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -126,19 +127,6 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(antalTxtpn);
 		antalTxtpn.setText("Antal");
 
-		table = new JTable();
-		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		table.setModel(
-				new DefaultTableModel(new Object[][] {}, new String[] { "Varenavn", "L\u00E6ngde", "Antal", "Pris" }) {
-					Class[] columnTypes = new Class[] { Integer.class, String.class, Integer.class, Integer.class };
-
-					public Class getColumnClass(int columnIndex) {
-						return columnTypes[columnIndex];
-					}
-				});
-		table.setBounds(576, 146, 870, 460);
-		layeredPane.add(table);
-
 		JTextPane vareTxtpn_1 = new JTextPane();
 		vareTxtpn_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		vareTxtpn_1.setText("Valgte varer");
@@ -203,19 +191,16 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(textPane);
 		
 		JTextPane vareNavnTextField = new JTextPane();
-		vareNavnTextField.setEditable(false);
 		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		vareNavnTextField.setBounds(10, 272, 400, 40);
 		layeredPane.add(vareNavnTextField);
 		
 		JTextPane madeByCompanyTextField = new JTextPane();
-		madeByCompanyTextField.setEditable(false);
 		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		madeByCompanyTextField.setBounds(10, 352, 400, 40);
 		layeredPane.add(madeByCompanyTextField);
 		
 		JTextPane priceTextField = new JTextPane();
-		priceTextField.setEditable(false);
 		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		priceTextField.setBounds(10, 432, 400, 40);
 		layeredPane.add(priceTextField);
@@ -277,15 +262,6 @@ public class SaleMenuGui extends JFrame {
 		udlanButton.setBackground(SystemColor.inactiveCaption);
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
-	
-		findVareButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				SaleProduct saleProduct = null;
-				saleProduct = saleController.searchSaleProductByID(Integer.parseInt(vareNrTextField.getText()));
-				vareNavnTextField.setText(saleProduct.getProductName());
-				madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
-				priceTextField.setText("" + saleProduct.getPrice());
-			}
-		});
+
 	}
 }
