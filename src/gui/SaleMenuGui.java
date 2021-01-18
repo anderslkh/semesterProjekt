@@ -263,5 +263,18 @@ public class SaleMenuGui extends JFrame {
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
 
+		
+		
 	}
+	
+	
+//	findVareButton.addActionListener(new ActionListener() {
+//		public void actionPerformed(ActionEvent e) {
+//			SaleProduct saleProduct = null;
+//			saleProduct = saleController.searchSaleProductByID(Integer.parseInt(vareNrTextField.getText()));
+//			vareNavnTextField.setText(saleProduct.getProductName());
+//			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+//			priceTextField.setText("" + saleProduct.getPrice());
+//		}
+//	});
 }
