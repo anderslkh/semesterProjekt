@@ -206,16 +206,19 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(textPane);
 		
 		JTextPane vareNavnTextField = new JTextPane();
+		vareNavnTextField.setEditable(false);
 		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		vareNavnTextField.setBounds(10, 272, 400, 40);
 		layeredPane.add(vareNavnTextField);
 		
 		JTextPane madeByCompanyTextField = new JTextPane();
+		madeByCompanyTextField.setEditable(false);
 		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		madeByCompanyTextField.setBounds(10, 352, 400, 40);
 		layeredPane.add(madeByCompanyTextField);
 		
 		JTextPane priceTextField = new JTextPane();
+		priceTextField.setEditable(false);
 		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		priceTextField.setBounds(10, 432, 400, 40);
 		layeredPane.add(priceTextField);

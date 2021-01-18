@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class BetalingsMenu extends JFrame {
 
@@ -194,5 +196,18 @@ public class BetalingsMenu extends JFrame {
 		udlanButton.setBackground(SystemColor.inactiveCaption);
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
+		
+		JButton btnNewButton_2_1 = new JButton("<-----");
+		btnNewButton_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				new SaleMenuGui().setVisible(true);
+			}
+		});
+		btnNewButton_2_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton_2_1.setBackground(new Color(95, 158, 160));
+		btnNewButton_2_1.setBounds(10, 632, 203, 46);
+		layeredPane.add(btnNewButton_2_1);
 	}
 }
