@@ -293,20 +293,25 @@ public class SaleMenuGui extends JFrame {
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 
-	}	
-//	:::søg vare knap:::
+	}
+	
+//	:::sog vare knap:::
 //	findVareButton.addActionListener(new ActionListener() {
-//		public void actionPerformed(ActionEvent e) {
-	//			proID = Integer.parseInt(vareNrTextField.getText());
-//			SaleProduct saleProduct = null;
-//			saleProduct = saleController.searchSaleProductByID(proID);
+//
+//	public void actionPerformed(ActionEvent e) {
+//		proID = Integer.parseInt(vareNrTextField.getText());
+//		SaleProduct saleProduct = null;
+//		saleProduct = saleController.searchSaleProductByID(proID);
+//		if (saleProduct != null) {
 //			vareNavnTextField.setText(saleProduct.getProductName());
 //			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
 //			priceTextField.setText("" + saleProduct.getPrice());
+//		}	else {
+//			"indsÃ¦t tekstboks der siger at varen er ugyldig;"
 //		}
-//	});
-	
-//	:::tilføj vare samt antal knap:::
+//	}
+//});
+//	:::tilfoj vare samt antal knap:::
 //		tilfojVareSalgButton.addActionListener(new ActionListener() {
 //		public void actionPerformed(ActionEvent e) {
 //			antal = Integer.parseint(txtIndastAntal.getText());
