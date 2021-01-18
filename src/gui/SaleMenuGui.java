@@ -288,18 +288,6 @@ public class SaleMenuGui extends JFrame {
 		scrollPane.setViewportView(table);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
-		
-		
-	}
-	
-	
-//	findVareButton.addActionListener(new ActionListener() {
-//		public void actionPerformed(ActionEvent e) {
-//			SaleProduct saleProduct = null;
-//			saleProduct = saleController.searchSaleProductByID(Integer.parseInt(vareNrTextField.getText()));
-//			vareNavnTextField.setText(saleProduct.getProductName());
-//			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
-//			priceTextField.setText("" + saleProduct.getPrice());
-//		}
-//	});
+
+	}	
 }
