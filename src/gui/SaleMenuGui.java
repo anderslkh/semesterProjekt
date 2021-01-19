@@ -306,6 +306,7 @@ public class SaleMenuGui extends JFrame {
 //			vareNavnTextField.setText(saleProduct.getProductName());
 //			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
 //			priceTextField.setText("" + saleProduct.getPrice());
+//	        new ErrorFrameOne().setVisible(true);
 //		}	else {
 //			"indsæt tekstboks der siger at varen er ugyldig;"
 //		}
