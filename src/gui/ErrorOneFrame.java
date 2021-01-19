@@ -63,7 +63,7 @@ public class ErrorOneFrame extends JFrame {
 		errorTxtBox.setEditable(false);
 		errorTxtBox.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		errorTxtBox.setBackground(UIManager.getColor("Button.background"));
-		errorTxtBox.setText("Vare nr ikke fundet.");
+		errorTxtBox.setText("Product ID ikke fundet.");
 		errorTxtBox.setBounds(88, 78, 236, 64);
 		layeredPane.add(errorTxtBox);
 	}
