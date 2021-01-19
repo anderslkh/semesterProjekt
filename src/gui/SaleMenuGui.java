@@ -279,7 +279,11 @@ public class SaleMenuGui extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
+<<<<<<< HEAD
+				"Vare nr.", "Længde", "Antal", "Pris"
+=======
 				"Vare navn", "L\u00E6ngde", "Antal", "Pris"
+>>>>>>> a790f6b3c76a4e52898828e104d2464b902d7d09
 			}
 		) {
 			Class[] columnTypes = new Class[] {
