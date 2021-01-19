@@ -276,7 +276,7 @@ public class SaleMenuGui extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"Vare nr.", "L\u00E6ngde", "Antal", "Pris"
+				"Vare nr.", "Længde", "Antal", "Pris"
 			}
 		) {
 			Class[] columnTypes = new Class[] {

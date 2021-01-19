@@ -18,6 +18,8 @@ import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BetalingsMenu extends JFrame {
 
@@ -191,13 +193,17 @@ public class BetalingsMenu extends JFrame {
 		kvitteringButton.setBounds(259, 10, 120, 40);
 		layeredPane.add(kvitteringButton);
 		
-		JButton udlanButton = new JButton("Udl\u00E5n");
+		JButton udlanButton = new JButton("Udlån");
 		udlanButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		udlanButton.setBackground(SystemColor.inactiveCaption);
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
 		
 		JButton returnButton = new JButton("<----");
+		returnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		returnButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
