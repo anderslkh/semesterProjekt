@@ -205,7 +205,7 @@ public class SaleMenuGui extends JFrame {
 		
 		JTextPane priceTextField = new JTextPane();
 		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		priceTextField.setBounds(10, 432, 400, 40);
+		priceTextField.setBounds(9, 432, 400, 40);
 		layeredPane.add(priceTextField);
 		
 		JTextPane navnTxtpn = new JTextPane();
