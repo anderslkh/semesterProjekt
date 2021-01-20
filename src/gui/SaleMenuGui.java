@@ -295,6 +295,7 @@ public class SaleMenuGui extends JFrame {
 
 	}
 	
+	
 //	:::sog vare knap:::
 //	findVareButton.addActionListener(new ActionListener() {
 //
