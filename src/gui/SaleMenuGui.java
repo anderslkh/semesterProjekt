@@ -300,6 +300,7 @@ public class SaleMenuGui extends JFrame {
 				}
 			}
 		});
+		
 	}
 
 //	public void findProduct() {
