@@ -5,18 +5,15 @@ public class SaleProduct {
 	private int productID;
 	private String madeByCompany;
 	private String description;
-	private int productNumber;
 	private String productBarcode;
 	private int price;
 	private String dateOfPrice;
 
-	public SaleProduct(String productName, int productID, String madeByCompany, String description, int productNumber,
-			String productBarcode, int price, String dateOfPrice) {
+	public SaleProduct(String productName, int productID, String madeByCompany, String description,	String productBarcode, int price, String dateOfPrice) {
 		this.productName = productName;
 		this.productID = productID;
 		this.madeByCompany = madeByCompany;
 		this.description = description;
-		this.productNumber = productNumber;
 		this.productBarcode = productBarcode;
 		this.price = price;
 		this.dateOfPrice = dateOfPrice;
@@ -54,14 +51,6 @@ public class SaleProduct {
 		this.description = description;
 	}
 
-	public int getProductNumber() {
-		return productNumber;
-	}
-
-	public void setProductNumber(int productNumber) {
-		this.productNumber = productNumber;
-	}
-
 	public String getProductBarcode() {
 		return productBarcode;
 	}
@@ -85,5 +74,4 @@ public class SaleProduct {
 	public void setDateOfPrice(String dateOfPrice) {
 		this.dateOfPrice = dateOfPrice;
 	}
-
 }
