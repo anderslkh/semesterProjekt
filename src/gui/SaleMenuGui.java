@@ -69,7 +69,7 @@ public class SaleMenuGui extends JFrame {
 		saleController = new SaleController();
 		proID = 0;
 		antal = 0;
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -155,7 +155,7 @@ public class SaleMenuGui extends JFrame {
 				new BetalingsMenu().setVisible(true);
 			}
 		});
-		
+
 		betalingsButton.setBackground(new Color(95, 158, 160));
 		betalingsButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		betalingsButton.setBounds(867, 690, 187, 40);
@@ -168,34 +168,35 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setBackground(SystemColor.activeCaption);
 		subTotalTxtpn.setBounds(576, 669, 291, 21);
 		layeredPane.add(subTotalTxtpn);
-		
+
 		JButton findVareButton = new JButton("Find vare");
-		
+
 		findVareButton.setActionCommand("S\u00F8g");
 		findVareButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		findVareButton.setBackground(new Color(95, 158, 160));
 		findVareButton.setBounds(410, 144, 120, 40);
 		layeredPane.add(findVareButton);
 		
+
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(185, 280, -62, 19);
 		layeredPane.add(textPane);
-		
+
 		JTextPane vareNavnTextField = new JTextPane();
 		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		vareNavnTextField.setBounds(10, 272, 400, 40);
 		layeredPane.add(vareNavnTextField);
-		
+
 		JTextPane madeByCompanyTextField = new JTextPane();
 		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		madeByCompanyTextField.setBounds(10, 352, 400, 40);
 		layeredPane.add(madeByCompanyTextField);
-		
+
 		JTextPane priceTextField = new JTextPane();
 		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		priceTextField.setBounds(9, 432, 400, 40);
 		layeredPane.add(priceTextField);
-		
+
 		JTextPane navnTxtpn = new JTextPane();
 		navnTxtpn.setText("Vare navn");
 		navnTxtpn.setPreferredSize(new Dimension(0, 0));
@@ -205,7 +206,7 @@ public class SaleMenuGui extends JFrame {
 		navnTxtpn.setBackground(SystemColor.activeCaption);
 		navnTxtpn.setBounds(10, 251, 400, 21);
 		layeredPane.add(navnTxtpn);
-		
+
 		JTextPane producentTxtpn = new JTextPane();
 		producentTxtpn.setText("Producent");
 		producentTxtpn.setPreferredSize(new Dimension(0, 0));
@@ -215,7 +216,7 @@ public class SaleMenuGui extends JFrame {
 		producentTxtpn.setBackground(SystemColor.activeCaption);
 		producentTxtpn.setBounds(10, 331, 400, 21);
 		layeredPane.add(producentTxtpn);
-		
+
 		JTextPane prisTxtpn = new JTextPane();
 		prisTxtpn.setText("Pris");
 		prisTxtpn.setPreferredSize(new Dimension(0, 0));
@@ -225,77 +226,95 @@ public class SaleMenuGui extends JFrame {
 		prisTxtpn.setBackground(SystemColor.activeCaption);
 		prisTxtpn.setBounds(10, 411, 400, 21);
 		layeredPane.add(prisTxtpn);
-		
+
 		JList list = new JList();
 		list.setBounds(515, 503, -99, -112);
 		layeredPane.add(list);
-		
+
 		JButton salgButton = new JButton("Salg");
 		salgButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		salgButton.setBackground(SystemColor.activeCaption);
 		salgButton.setBounds(9, 10, 120, 40);
 		layeredPane.add(salgButton);
-		
+
 		JButton opretKundeButton = new JButton("Opret kunde");
 		opretKundeButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		opretKundeButton.setBackground(SystemColor.inactiveCaption);
 		opretKundeButton.setBounds(134, 10, 120, 40);
 		layeredPane.add(opretKundeButton);
-		
+
 		JButton kvitteringButton = new JButton("Kvittering");
 		kvitteringButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		kvitteringButton.setBackground(SystemColor.inactiveCaption);
 		kvitteringButton.setBounds(259, 10, 120, 40);
 		layeredPane.add(kvitteringButton);
-		
+
 		JButton udlanButton = new JButton("Udl\u00E5n");
 		udlanButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		udlanButton.setBackground(SystemColor.inactiveCaption);
 		udlanButton.setBounds(384, 10, 120, 40);
 		layeredPane.add(udlanButton);
-		
+
 		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
 		tilfojVareSalgButton.setBackground(new Color(95, 158, 160));
 		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		tilfojVareSalgButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[] { (vareNavnTextField.getText()),
-						(madeByCompanyTextField.getText()),
-						(Integer.parseInt(txtIndtastAntal.getText())), 
-						(Double.parseDouble(priceTextField.getText()))});
+				model.addRow(new Object[] { (vareNavnTextField.getText()), (madeByCompanyTextField.getText()),
+						(Integer.parseInt(txtIndtastAntal.getText())),
+						(Double.parseDouble(priceTextField.getText())) });
 			}
 		});
 		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
 		layeredPane.add(tilfojVareSalgButton);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(576, 146, 870, 460);
 		layeredPane.add(scrollPane);
-		
+
 		table = new JTable();
 		table.setFillsViewportHeight(true);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Vare navn", "L\u00E6ngde", "Antal", "Pris"
-			}
-		) {
-			Class[] columnTypes = new Class[] {
-				String.class, String.class, Integer.class, Double.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
+		table.setModel(
+				new DefaultTableModel(new Object[][] {}, new String[] { "Vare navn", "L\u00E6ngde", "Antal", "Pris" }) {
+					Class[] columnTypes = new Class[] { String.class, String.class, Integer.class, Double.class };
+
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+				});
 		scrollPane.setViewportView(table);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
-
-
+		
+		findVareButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				proID = Integer.parseInt(vareNrTextField.getText());
+				SaleProduct saleProduct = null;
+				saleProduct = saleController.searchSaleProductByID(proID);
+				if (saleProduct != null) {
+					vareNavnTextField.setText(saleProduct.getProductName());
+					madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+					priceTextField.setText("" + saleProduct.getPrice());
+				}	else {
+		    		new ErrorOneFrame().setVisible(true);
+				}
+			}
+		});
 	}
-	
-	
+
+//	public void findProduct() {
+//		proID = Integer.parseInt(vareNrTextField.getText());
+//		SaleProduct saleProduct = null;
+//		saleProduct = saleController.searchSaleProductByID(proID);
+//		if (saleProduct != null) {
+//			SaleMenuGui.vareNavnTextField.setText(saleProduct.getProductName());
+//			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+//			priceTextField.setText("" + saleProduct.getPrice());
+//		} else {
+//			new ErrorFrameOne().setVisible(true);
+//		}
+//	}
+
 //	:::sog vare knap:::
 //	findVareButton.addActionListener(new ActionListener() {
 //
