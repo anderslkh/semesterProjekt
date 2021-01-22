@@ -304,6 +304,22 @@ public class SaleMenuGui extends JFrame {
 		cancelButton.setBounds(10, 669, 149, 61);
 		layeredPane.add(cancelButton);
 		
+		JButton btnFjernVare = new JButton("Fjern vare");
+		btnFjernVare.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = table.getSelectedRow();
+                if(i >= 0){
+					// remove a row from jtable
+                    DefaultTableModel.removeRow(i);
+                }
+			}
+		});
+		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnFjernVare.setBackground(Color.RED);
+		btnFjernVare.setBounds(169, 669, 149, 61);
+		layeredPane.add(btnFjernVare);
+		
 		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				proID = Integer.parseInt(vareNrTextField.getText());
