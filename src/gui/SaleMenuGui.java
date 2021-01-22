@@ -120,7 +120,7 @@ public class SaleMenuGui extends JFrame {
 		txtIndtastAntal.setBackground(Color.WHITE);
 		txtIndtastAntal.setBounds(10, 512, 400, 40);
 		layeredPane.add(txtIndtastAntal);
-		txtIndtastAntal.setText("Indtast antal");
+		txtIndtastAntal.setText("1");
 		txtIndtastAntal.setColumns(10);
 
 		JTextPane antalTxtpn = new JTextPane();
