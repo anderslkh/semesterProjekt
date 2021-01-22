@@ -101,7 +101,7 @@ public class BetalingsMenu extends JFrame {
 		JButton btnNewButton_2 = new JButton("Print Kvittering");
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_2.setBackground(new Color(95, 158, 160));
-		btnNewButton_2.setBounds(924, 617, 203, 46);
+		btnNewButton_2.setBounds(924, 632, 203, 46);
 		layeredPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("OK");
@@ -215,5 +215,16 @@ public class BetalingsMenu extends JFrame {
 		returnButton.setBackground(new Color(95, 158, 160));
 		returnButton.setBounds(10, 632, 203, 46);
 		layeredPane.add(returnButton);
+		
+		JButton cancel2Button = new JButton("Annuller Salg");
+		cancel2Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				setVisible(false);
+				new SaleMenuGui().setVisible(true);			}
+		});
+		cancel2Button.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cancel2Button.setBackground(Color.RED);
+		cancel2Button.setBounds(270, 632, 155, 46);
+		layeredPane.add(cancel2Button);
 	}
 }
