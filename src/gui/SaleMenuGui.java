@@ -286,6 +286,24 @@ public class SaleMenuGui extends JFrame {
 		scrollPane.setViewportView(table);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
+		JButton cancelButton = new JButton("Annuller Salg");
+		cancelButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vareNrTextField.setText(null);
+				vareNavnTextField.setText(null);
+				madeByCompanyTextField.setText(null);
+				priceTextField.setText(null);
+				txtIndtastAntal.setText(null);
+				subTotalShowingTxtpn.setText(null);
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.setRowCount(0);
+			}
+		});
+		cancelButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cancelButton.setBackground(Color.RED);
+		cancelButton.setBounds(10, 669, 149, 61);
+		layeredPane.add(cancelButton);
+		
 		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				proID = Integer.parseInt(vareNrTextField.getText());
@@ -302,46 +320,4 @@ public class SaleMenuGui extends JFrame {
 		});
 		
 	}
-
-//	public void findProduct() {
-//		proID = Integer.parseInt(vareNrTextField.getText());
-//		SaleProduct saleProduct = null;
-//		saleProduct = saleController.searchSaleProductByID(proID);
-//		if (saleProduct != null) {
-//			SaleMenuGui.vareNavnTextField.setText(saleProduct.getProductName());
-//			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
-//			priceTextField.setText("" + saleProduct.getPrice());
-//		} else {
-//			new ErrorFrameOne().setVisible(true);
-//		}
-//	}
-
-//	:::sog vare knap:::
-//	findVareButton.addActionListener(new ActionListener() {
-//
-//	public void actionPerformed(ActionEvent e) {
-//		proID = Integer.parseInt(vareNrTextField.getText());
-//		SaleProduct saleProduct = null;
-//		saleProduct = saleController.searchSaleProductByID(proID);
-//		if (saleProduct != null) {
-//			vareNavnTextField.setText(saleProduct.getProductName());
-//			madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
-//			priceTextField.setText("" + saleProduct.getPrice());
-//		}	else {
-//    		new ErrorFrameOne().setVisible(true);
-//		}
-//	}
-//});
-//	:::tilfoj vare samt antal knap:::
-//		tilfojVareSalgButton.addActionListener(new ActionListener() {
-//		public void actionPerformed(ActionEvent e) {
-//			antal = Integer.parseint(txtIndastAntal.getText());
-//			DefaultTableModel model = (DefaultTableModel) table.getModel();
-//			model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
-//					Integer.parseInt(txtIndtastAntal.getText())});
-//			saleController.enterSaleProduct(proID, txtIn)
-//			proID = 0;
-//			antal = 0;
-//		}
-//	});
 }
