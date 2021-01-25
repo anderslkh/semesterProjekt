@@ -45,6 +45,7 @@ public class SaleMenuGui extends JFrame {
 	private JTable table;
 	private int proID;
 	private int antal;
+	private int price;
 
 	/**
 	 * Launch the application.
@@ -69,6 +70,7 @@ public class SaleMenuGui extends JFrame {
 		saleController = new SaleController();
 		proID = 0;
 		antal = 0;
+		price = 0;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
@@ -260,14 +262,7 @@ public class SaleMenuGui extends JFrame {
 		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
 		tilfojVareSalgButton.setBackground(new Color(95, 158, 160));
 		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		tilfojVareSalgButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[] { (vareNavnTextField.getText()), (madeByCompanyTextField.getText()),
-						(Integer.parseInt(txtIndtastAntal.getText())),
-						(Double.parseDouble(priceTextField.getText())) });
-			}
-		});
+		
 		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
 		layeredPane.add(tilfojVareSalgButton);
 
@@ -313,7 +308,7 @@ public class SaleMenuGui extends JFrame {
 				int i = table.getSelectedRow();
                 if(i >= 0){
 					// remove a row from jtable
-                    DefaultTableModel.removeRow(i);
+//                    DefaultTableModel.removeRow(i);
                 }
 			}
 		});
@@ -330,12 +325,36 @@ public class SaleMenuGui extends JFrame {
 				if (saleProduct != null) {
 					vareNavnTextField.setText(saleProduct.getProductName());
 					madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+					price = saleProduct.getPrice();
 					priceTextField.setText("" + saleProduct.getPrice());
+					vareNrTextField.setText("Indtast varens ID.");
 				}	else {
 		    		new ErrorOneFrame().setVisible(true);
 				}
 			}
 		});
+			
+		tilfojVareSalgButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				antal = Integer.parseInt(txtIndtastAntal.getText());
+				int currPrice = Integer.parseInt(subTotalShowingTxtpn.getText());
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.addRow(new Object[] { (vareNavnTextField.getText()), (madeByCompanyTextField.getText()),
+						(Integer.parseInt(txtIndtastAntal.getText())),
+						(Double.parseDouble(priceTextField.getText()) * antal) });
+				currPrice += antal * price;
+				subTotalShowingTxtpn.setText("" + currPrice);
+				saleController.enterSaleProduct(proID, antal);
+				proID = 0;
+				antal = 0;
+				vareNavnTextField.setText("");
+				madeByCompanyTextField.setText("");
+				priceTextField.setText("");
+				txtIndtastAntal.setText("1");
+			}
+		});
+		
+
 		
 	}
 }
