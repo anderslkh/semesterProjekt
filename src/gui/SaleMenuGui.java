@@ -2,6 +2,8 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import controller.*;
+import model.SaleProduct;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,13 +34,17 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
 
 public class SaleMenuGui extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField vareNrTextField;
 	private JTextField txtIndtastAntal;
+	private SaleController saleController;
 	private JTable table;
+	private int proID;
+	private int antal;
 
 	/**
 	 * Launch the application.
@@ -60,6 +66,10 @@ public class SaleMenuGui extends JFrame {
 	 * Create the frame.
 	 */
 	public SaleMenuGui() {
+		saleController = new SaleController();
+		proID = 0;
+		antal = 0;
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -73,7 +83,7 @@ public class SaleMenuGui extends JFrame {
 
 		JTextPane vareTxtpn = new JTextPane();
 		vareTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
-		vareTxtpn.setBackground(Color.LIGHT_GRAY);
+		vareTxtpn.setBackground(SystemColor.activeCaption);
 		vareTxtpn.setEditable(false);
 		vareTxtpn.setBounds(10, 125, 400, 21);
 		layeredPane.add(vareTxtpn);
@@ -89,7 +99,7 @@ public class SaleMenuGui extends JFrame {
 				vareNrTextField.setText("");
 			}
 		});
-		vareNrTextField.setText("Indtast vare nr.");
+		vareNrTextField.setText("Indtast varens ID.");
 		vareNrTextField.setBorder(null);
 		vareNrTextField.setToolTipText("xd");
 		vareNrTextField.setBackground(Color.WHITE);
@@ -110,29 +120,16 @@ public class SaleMenuGui extends JFrame {
 		txtIndtastAntal.setBackground(Color.WHITE);
 		txtIndtastAntal.setBounds(10, 512, 400, 40);
 		layeredPane.add(txtIndtastAntal);
-		txtIndtastAntal.setText("Indtast antal");
+		txtIndtastAntal.setText("1");
 		txtIndtastAntal.setColumns(10);
 
 		JTextPane antalTxtpn = new JTextPane();
 		antalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		antalTxtpn.setEditable(false);
-		antalTxtpn.setBackground(Color.LIGHT_GRAY);
+		antalTxtpn.setBackground(SystemColor.activeCaption);
 		antalTxtpn.setBounds(10, 491, 400, 21);
 		layeredPane.add(antalTxtpn);
 		antalTxtpn.setText("Antal");
-
-		table = new JTable();
-		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		table.setModel(
-				new DefaultTableModel(new Object[][] {}, new String[] { "Varenavn", "L\u00E6ngde", "Antal", "Pris" }) {
-					Class[] columnTypes = new Class[] { Integer.class, String.class, Integer.class, Integer.class };
-
-					public Class getColumnClass(int columnIndex) {
-						return columnTypes[columnIndex];
-					}
-				});
-		table.setBounds(576, 146, 870, 460);
-		layeredPane.add(table);
 
 		JTextPane vareTxtpn_1 = new JTextPane();
 		vareTxtpn_1.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -140,138 +137,204 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setPreferredSize(new Dimension(0, 0));
 		vareTxtpn_1.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn_1.setEditable(false);
-		vareTxtpn_1.setBackground(Color.LIGHT_GRAY);
+		vareTxtpn_1.setBackground(SystemColor.activeCaption);
 		vareTxtpn_1.setBounds(576, 125, 870, 21);
 		layeredPane.add(vareTxtpn_1);
 
-		JButton tilføjVareSalgButton = new JButton("Tilf\u00F8j");
-		tilføjVareSalgButton.setBackground(Color.LIGHT_GRAY);
-		tilføjVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		tilføjVareSalgButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[] { Integer.parseInt(vareNrTextField.getText()),
-						Integer.parseInt(txtIndtastAntal.getText())});
-			}
-		});
-		tilføjVareSalgButton.setBounds(410, 512, 120, 40);
-		layeredPane.add(tilføjVareSalgButton);
-
-		JTextPane subTotalShowingTxtpn = new JTextPane();
+		JTextPane subTotalShowingTxtpn = 
+				new JTextPane();
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
 		subTotalShowingTxtpn.setBounds(576, 690, 291, 40);
 		layeredPane.add(subTotalShowingTxtpn);
 
-		JButton gåTilBetalingButton = new JButton("G\u00E5 til betaling");
-		gåTilBetalingButton.addActionListener(new ActionListener() {
+		JButton betalingsButton = new JButton("G\u00E5 til betaling");
+		betalingsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				new BetalingsMenu().setVisible(true);
 			}
 		});
-		
-		gåTilBetalingButton.setBackground(Color.LIGHT_GRAY);
-		gåTilBetalingButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		gåTilBetalingButton.setBounds(867, 690, 145, 40);
-		layeredPane.add(gåTilBetalingButton);
+
+		betalingsButton.setBackground(new Color(95, 158, 160));
+		betalingsButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		betalingsButton.setBounds(867, 690, 187, 40);
+		layeredPane.add(betalingsButton);
 
 		JTextPane subTotalTxtpn = new JTextPane();
 		subTotalTxtpn.setText("Subtotal");
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
-		subTotalTxtpn.setBackground(Color.LIGHT_GRAY);
+		subTotalTxtpn.setBackground(SystemColor.activeCaption);
 		subTotalTxtpn.setBounds(576, 669, 291, 21);
 		layeredPane.add(subTotalTxtpn);
+
+		JButton findVareButton = new JButton("Find vare");
+
+		findVareButton.setActionCommand("S\u00F8g");
+		findVareButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		findVareButton.setBackground(new Color(95, 158, 160));
+		findVareButton.setBounds(410, 144, 120, 40);
+		layeredPane.add(findVareButton);
 		
-		JButton søgeVareSalgButton = new JButton("Søg");
-		søgeVareSalgButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		søgeVareSalgButton.setActionCommand("S\u00F8g");
-		søgeVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		søgeVareSalgButton.setBackground(Color.LIGHT_GRAY);
-		søgeVareSalgButton.setBounds(410, 144, 120, 40);
-		layeredPane.add(søgeVareSalgButton);
-		
+
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(185, 280, -62, 19);
 		layeredPane.add(textPane);
-		
+
 		JTextPane vareNavnTextField = new JTextPane();
 		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		vareNavnTextField.setBounds(10, 272, 400, 40);
 		layeredPane.add(vareNavnTextField);
-		
+
 		JTextPane madeByCompanyTextField = new JTextPane();
 		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		madeByCompanyTextField.setBounds(10, 352, 400, 40);
 		layeredPane.add(madeByCompanyTextField);
-		
+
 		JTextPane priceTextField = new JTextPane();
 		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		priceTextField.setBounds(10, 432, 400, 40);
+		priceTextField.setBounds(9, 432, 400, 40);
 		layeredPane.add(priceTextField);
-		
+
 		JTextPane navnTxtpn = new JTextPane();
 		navnTxtpn.setText("Vare navn");
 		navnTxtpn.setPreferredSize(new Dimension(0, 0));
 		navnTxtpn.setMargin(new Insets(3, 3, 3, 0));
 		navnTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		navnTxtpn.setEditable(false);
-		navnTxtpn.setBackground(Color.LIGHT_GRAY);
+		navnTxtpn.setBackground(SystemColor.activeCaption);
 		navnTxtpn.setBounds(10, 251, 400, 21);
 		layeredPane.add(navnTxtpn);
-		
+
 		JTextPane producentTxtpn = new JTextPane();
 		producentTxtpn.setText("Producent");
 		producentTxtpn.setPreferredSize(new Dimension(0, 0));
 		producentTxtpn.setMargin(new Insets(3, 3, 3, 0));
 		producentTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		producentTxtpn.setEditable(false);
-		producentTxtpn.setBackground(Color.LIGHT_GRAY);
+		producentTxtpn.setBackground(SystemColor.activeCaption);
 		producentTxtpn.setBounds(10, 331, 400, 21);
 		layeredPane.add(producentTxtpn);
-		
+
 		JTextPane prisTxtpn = new JTextPane();
 		prisTxtpn.setText("Pris");
 		prisTxtpn.setPreferredSize(new Dimension(0, 0));
 		prisTxtpn.setMargin(new Insets(3, 3, 3, 0));
 		prisTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		prisTxtpn.setEditable(false);
-		prisTxtpn.setBackground(Color.LIGHT_GRAY);
+		prisTxtpn.setBackground(SystemColor.activeCaption);
 		prisTxtpn.setBounds(10, 411, 400, 21);
 		layeredPane.add(prisTxtpn);
-		
+
 		JList list = new JList();
 		list.setBounds(515, 503, -99, -112);
 		layeredPane.add(list);
-		
+
 		JButton salgButton = new JButton("Salg");
 		salgButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		salgButton.setBackground(SystemColor.activeCaption);
 		salgButton.setBounds(9, 10, 120, 40);
 		layeredPane.add(salgButton);
-		
+
 		JButton opretKundeButton = new JButton("Opret kunde");
 		opretKundeButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		opretKundeButton.setBackground(SystemColor.activeCaptionBorder);
+		opretKundeButton.setBackground(SystemColor.inactiveCaption);
 		opretKundeButton.setBounds(134, 10, 120, 40);
 		layeredPane.add(opretKundeButton);
-		
+
 		JButton kvitteringButton = new JButton("Kvittering");
 		kvitteringButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		kvitteringButton.setBackground(SystemColor.activeCaptionBorder);
+		kvitteringButton.setBackground(SystemColor.inactiveCaption);
 		kvitteringButton.setBounds(259, 10, 120, 40);
 		layeredPane.add(kvitteringButton);
+
+		JButton udlanButton = new JButton("Udl\u00E5n");
+		udlanButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		udlanButton.setBackground(SystemColor.inactiveCaption);
+		udlanButton.setBounds(384, 10, 120, 40);
+		layeredPane.add(udlanButton);
+
+		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
+		tilfojVareSalgButton.setBackground(new Color(95, 158, 160));
+		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		tilfojVareSalgButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.addRow(new Object[] { (vareNavnTextField.getText()), (madeByCompanyTextField.getText()),
+						(Integer.parseInt(txtIndtastAntal.getText())),
+						(Double.parseDouble(priceTextField.getText())) });
+			}
+		});
+		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
+		layeredPane.add(tilfojVareSalgButton);
+
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(576, 146, 870, 460);
+		layeredPane.add(scrollPane);
+
+		table = new JTable();
+		table.setFillsViewportHeight(true);
+		table.setModel(
+				new DefaultTableModel(new Object[][] {}, new String[] { "Vare navn", "L\u00E6ngde", "Antal", "Pris" }) {
+					Class[] columnTypes = new Class[] { String.class, String.class, Integer.class, Double.class };
+
+					public Class getColumnClass(int columnIndex) {
+						return columnTypes[columnIndex];
+					}
+				});
+		scrollPane.setViewportView(table);
+		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		JButton udlånButton = new JButton("Udl\u00E5n");
-		udlånButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		udlånButton.setBackground(SystemColor.activeCaptionBorder);
-		udlånButton.setBounds(384, 10, 120, 40);
-		layeredPane.add(udlånButton);
+		JButton cancelButton = new JButton("Annuller Salg");
+		cancelButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vareNrTextField.setText(null);
+				vareNavnTextField.setText(null);
+				madeByCompanyTextField.setText(null);
+				priceTextField.setText(null);
+				txtIndtastAntal.setText(null);
+				subTotalShowingTxtpn.setText(null);
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.setRowCount(0);
+			}
+		});
+		cancelButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cancelButton.setBackground(Color.RED);
+		cancelButton.setBounds(10, 669, 149, 61);
+		layeredPane.add(cancelButton);
+		
+		JButton btnFjernVare = new JButton("Fjern vare");
+		btnFjernVare.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = table.getSelectedRow();
+                if(i >= 0){
+					// remove a row from jtable
+                    DefaultTableModel.removeRow(i);
+                }
+			}
+		});
+		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnFjernVare.setBackground(Color.RED);
+		btnFjernVare.setBounds(169, 669, 149, 61);
+		layeredPane.add(btnFjernVare);
+		
+		findVareButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				proID = Integer.parseInt(vareNrTextField.getText());
+				SaleProduct saleProduct = null;
+				saleProduct = saleController.searchSaleProductByID(proID);
+				if (saleProduct != null) {
+					vareNavnTextField.setText(saleProduct.getProductName());
+					madeByCompanyTextField.setText(saleProduct.getMadeByCompany());
+					priceTextField.setText("" + saleProduct.getPrice());
+				}	else {
+		    		new ErrorOneFrame().setVisible(true);
+				}
+			}
+		});
 		
 	}
 }

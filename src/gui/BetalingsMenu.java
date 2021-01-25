@@ -16,6 +16,10 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BetalingsMenu extends JFrame {
 
@@ -64,12 +68,12 @@ public class BetalingsMenu extends JFrame {
 		JTextPane txtpnValgteVarer = new JTextPane();
 		txtpnValgteVarer.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnValgteVarer.setText("Valgte varer");
-		txtpnValgteVarer.setBackground(Color.LIGHT_GRAY);
+		txtpnValgteVarer.setBackground(SystemColor.activeCaption);
 		txtpnValgteVarer.setBounds(10, 78, 870, 21);
 		layeredPane.add(txtpnValgteVarer);
 		
 		JTextPane txtpnFindEksisterendeKunde = new JTextPane();
-		txtpnFindEksisterendeKunde.setBackground(Color.LIGHT_GRAY);
+		txtpnFindEksisterendeKunde.setBackground(SystemColor.activeCaption);
 		txtpnFindEksisterendeKunde.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnFindEksisterendeKunde.setText("Find eksisterende kunde");
 		txtpnFindEksisterendeKunde.setBounds(924, 78, 400, 21);
@@ -84,25 +88,25 @@ public class BetalingsMenu extends JFrame {
 		
 		JButton btnNewButton = new JButton("S\u00F8g");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBackground(Color.LIGHT_GRAY);
+		btnNewButton.setBackground(new Color(95, 158, 160));
 		btnNewButton.setBounds(1324, 99, 85, 40);
 		layeredPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Kortbetaling");
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_1.setBackground(SystemColor.info);
 		btnNewButton_1.setBounds(924, 470, 130, 40);
 		layeredPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Print Kvittering");
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_2.setBackground(SystemColor.textHighlight);
-		btnNewButton_2.setBounds(924, 617, 203, 46);
+		btnNewButton_2.setBackground(new Color(95, 158, 160));
+		btnNewButton_2.setBounds(924, 632, 203, 46);
 		layeredPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("OK");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_3.setBackground(new Color(95, 158, 160));
 		btnNewButton_3.setBounds(1324, 407, 85, 40);
 		layeredPane.add(btnNewButton_3);
 		
@@ -119,7 +123,7 @@ public class BetalingsMenu extends JFrame {
 		
 		JTextPane txtpnSubtotal = new JTextPane();
 		txtpnSubtotal.setText("Subtotal");
-		txtpnSubtotal.setBackground(Color.LIGHT_GRAY);
+		txtpnSubtotal.setBackground(SystemColor.activeCaption);
 		txtpnSubtotal.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnSubtotal.setBounds(924, 302, 400, 21);
 		layeredPane.add(txtpnSubtotal);
@@ -147,21 +151,21 @@ public class BetalingsMenu extends JFrame {
 		JTextPane txtpnKundeinformation = new JTextPane();
 		txtpnKundeinformation.setText("Kundeinformation");
 		txtpnKundeinformation.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtpnKundeinformation.setBackground(Color.LIGHT_GRAY);
+		txtpnKundeinformation.setBackground(SystemColor.activeCaption);
 		txtpnKundeinformation.setBounds(924, 162, 400, 21);
 		layeredPane.add(txtpnKundeinformation);
 		
 		JTextPane txtpnSubtotal_1 = new JTextPane();
 		txtpnSubtotal_1.setText("Kontantbetaling");
 		txtpnSubtotal_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtpnSubtotal_1.setBackground(Color.LIGHT_GRAY);
+		txtpnSubtotal_1.setBackground(SystemColor.activeCaption);
 		txtpnSubtotal_1.setBounds(924, 386, 400, 21);
 		layeredPane.add(txtpnSubtotal_1);
 		
 		JTextPane txtpnSubtotal_1_1 = new JTextPane();
 		txtpnSubtotal_1_1.setText("Retur");
 		txtpnSubtotal_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtpnSubtotal_1_1.setBackground(Color.LIGHT_GRAY);
+		txtpnSubtotal_1_1.setBackground(SystemColor.activeCaption);
 		txtpnSubtotal_1_1.setBounds(924, 533, 400, 21);
 		layeredPane.add(txtpnSubtotal_1_1);
 		
@@ -179,20 +183,48 @@ public class BetalingsMenu extends JFrame {
 		
 		JButton opretKundeButton = new JButton("Opret kunde");
 		opretKundeButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		opretKundeButton.setBackground(SystemColor.activeCaptionBorder);
+		opretKundeButton.setBackground(SystemColor.inactiveCaption);
 		opretKundeButton.setBounds(134, 10, 120, 40);
 		layeredPane.add(opretKundeButton);
 		
 		JButton kvitteringButton = new JButton("Kvittering");
 		kvitteringButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		kvitteringButton.setBackground(SystemColor.activeCaptionBorder);
+		kvitteringButton.setBackground(SystemColor.inactiveCaption);
 		kvitteringButton.setBounds(259, 10, 120, 40);
 		layeredPane.add(kvitteringButton);
 		
-		JButton udlånButton = new JButton("Udl\u00E5n");
-		udlånButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		udlånButton.setBackground(SystemColor.activeCaptionBorder);
-		udlånButton.setBounds(384, 10, 120, 40);
-		layeredPane.add(udlånButton);
+		JButton udlanButton = new JButton("Udlån");
+		udlanButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		udlanButton.setBackground(SystemColor.inactiveCaption);
+		udlanButton.setBounds(384, 10, 120, 40);
+		layeredPane.add(udlanButton);
+		
+		JButton returnButton = new JButton("<----");
+		returnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		returnButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				new SaleMenuGui().setVisible(true);
+			}
+		});
+		returnButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		returnButton.setBackground(new Color(95, 158, 160));
+		returnButton.setBounds(10, 632, 203, 46);
+		layeredPane.add(returnButton);
+		
+		JButton cancel2Button = new JButton("Annuller Salg");
+		cancel2Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				setVisible(false);
+				new SaleMenuGui().setVisible(true);			}
+		});
+		cancel2Button.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		cancel2Button.setBackground(Color.RED);
+		cancel2Button.setBounds(270, 632, 155, 46);
+		layeredPane.add(cancel2Button);
 	}
 }
