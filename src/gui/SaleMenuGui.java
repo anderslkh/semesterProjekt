@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -305,11 +306,24 @@ public class SaleMenuGui extends JFrame {
 		btnFjernVare.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int i = table.getSelectedRow();
-                if(i >= 0){
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				
+				// get selected row
+				
+				try {
+				int SelectedRowIndex = table.getSelectedRow();
+				model.removeRow(SelectedRowIndex);
+				}catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null, ex);
+				}
+			}
+				
+				//int i = table.getSelectedRow();
+                //if(i >= 0){
 					// remove a row from jtable
 //                    DefaultTableModel.removeRow(i);
-                }
+                {
 			}
 		});
 		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
