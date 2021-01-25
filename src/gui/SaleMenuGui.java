@@ -143,6 +143,7 @@ public class SaleMenuGui extends JFrame {
 
 		JTextPane subTotalShowingTxtpn = 
 				new JTextPane();
+		subTotalShowingTxtpn.setText("0");
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
