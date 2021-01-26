@@ -306,10 +306,7 @@ public class SaleMenuGui extends JFrame {
 		btnFjernVare.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				
-				// get selected row
-				
+				DefaultTableModel model = (DefaultTableModel) table.getModel();				
 				try {
 				int SelectedRowIndex = table.getSelectedRow();
 				model.removeRow(SelectedRowIndex);
