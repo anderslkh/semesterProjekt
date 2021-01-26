@@ -407,7 +407,7 @@ public class SaleMenuGui extends JFrame {
 			}
 		});
 		btnFinishSale.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnFinishSale.setBackground(Color.RED);
+		btnFinishSale.setBackground(Color.GREEN);
 		btnFinishSale.setBounds(1481, 669, 212, 61);
 		layeredPane.add(btnFinishSale);
 		
