@@ -26,10 +26,11 @@ public class BetalingsMenu extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField txtTelefon;
-	private JTextField textField_1;
+	private JTextField kontantBetalingTxtField;
 	private JTextField textField_3;
 	private JTable table_1;
 	private JTextField textField;
+
 	/**
 	 * Launch the application.
 	 */
@@ -113,11 +114,11 @@ public class BetalingsMenu extends JFrame {
 		btnNewButton_3.setBounds(1324, 407, 85, 40);
 		layeredPane.add(btnNewButton_3);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBounds(924, 407, 400, 40);
-		layeredPane.add(textField_1);
+		kontantBetalingTxtField = new JTextField();
+		kontantBetalingTxtField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		kontantBetalingTxtField.setColumns(10);
+		kontantBetalingTxtField.setBounds(924, 407, 400, 40);
+		layeredPane.add(kontantBetalingTxtField);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
@@ -158,12 +159,12 @@ public class BetalingsMenu extends JFrame {
 		txtpnKundeinformation.setBounds(924, 162, 400, 21);
 		layeredPane.add(txtpnKundeinformation);
 		
-		JTextPane txtpnSubtotal_1 = new JTextPane();
-		txtpnSubtotal_1.setText("Kontantbetaling");
-		txtpnSubtotal_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtpnSubtotal_1.setBackground(SystemColor.activeCaption);
-		txtpnSubtotal_1.setBounds(924, 386, 400, 21);
-		layeredPane.add(txtpnSubtotal_1);
+		JTextPane txtpnKontantbetaling = new JTextPane();
+		txtpnKontantbetaling.setText("Kontantbetaling");
+		txtpnKontantbetaling.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnKontantbetaling.setBackground(SystemColor.activeCaption);
+		txtpnKontantbetaling.setBounds(924, 386, 400, 21);
+		layeredPane.add(txtpnKontantbetaling);
 		
 		JTextPane txtpnSubtotal_1_1 = new JTextPane();
 		txtpnSubtotal_1_1.setText("Retur");
