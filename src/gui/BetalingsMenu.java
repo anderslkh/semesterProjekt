@@ -30,9 +30,6 @@ public class BetalingsMenu extends JFrame {
 	private JTextField textField_3;
 	private JTable table_1;
 	private JTextField textField;
-	private double total1;
-	private double total2;
-
 	/**
 	 * Launch the application.
 	 */
@@ -109,13 +106,6 @@ public class BetalingsMenu extends JFrame {
 		JButton btnNewButton_3 = new JButton("OK");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//total1 = Double.parseDouble
-				//
-				//
-				//
-				//
-				//
-				//
 			}
 		});
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
