@@ -44,6 +44,7 @@ public class SaleMenuGui extends JFrame {
 	private JTextField txtIndtastAntal;
 	private SaleController saleController;
 	private JTable table;
+	private JTable table_1;
 	private int proID;
 	private int antal;
 	private int price;
@@ -125,6 +126,26 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(txtIndtastAntal);
 		txtIndtastAntal.setText("1");
 		txtIndtastAntal.setColumns(10);
+		
+		table_1 = new JTable();
+		table_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Navn", "Anders Hansen"},
+				{"Tlf nr", "12345678"},
+				{"Mail", "ahansen@yahoo.com"},
+				{"Adresse", "Boligstr\u00E6de 4"},
+				{"Postnummer", "9231"},
+				{"By", "K\u00F8benhavn"},
+			},
+			new String[] {
+				" ", "Kundeinformation"
+			}
+		));
+		table_1.getColumnModel().getColumn(0).setPreferredWidth(69);
+		table_1.getColumnModel().getColumn(1).setPreferredWidth(114);
+		table_1.setBounds(912, 23, 400, 96);
+		layeredPane.add(table_1);
 
 		JTextPane antalTxtpn = new JTextPane();
 		antalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -317,6 +338,7 @@ public class SaleMenuGui extends JFrame {
 			}
 	
 		});
+		
 		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnFjernVare.setBackground(Color.RED);
 		btnFjernVare.setBounds(169, 669, 149, 61);
