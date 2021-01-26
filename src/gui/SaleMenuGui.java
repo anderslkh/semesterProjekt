@@ -318,13 +318,7 @@ public class SaleMenuGui extends JFrame {
 					JOptionPane.showMessageDialog(null, ex);
 				}
 			}
-				
-				//int i = table.getSelectedRow();
-                //if(i >= 0){
-					// remove a row from jtable
-//                    DefaultTableModel.removeRow(i);
-                {
-			}
+	
 		});
 		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnFjernVare.setBackground(Color.RED);

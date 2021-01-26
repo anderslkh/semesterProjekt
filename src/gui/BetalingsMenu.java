@@ -30,6 +30,8 @@ public class BetalingsMenu extends JFrame {
 	private JTextField textField_3;
 	private JTable table_1;
 	private JTextField textField;
+	private double total1;
+	private double total2;
 
 	/**
 	 * Launch the application.
@@ -105,6 +107,17 @@ public class BetalingsMenu extends JFrame {
 		layeredPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("OK");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//total1 = Double.parseDouble
+				//
+				//
+				//
+				//
+				//
+				//
+			}
+		});
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_3.setBackground(new Color(95, 158, 160));
 		btnNewButton_3.setBounds(1324, 407, 85, 40);
@@ -226,5 +239,6 @@ public class BetalingsMenu extends JFrame {
 		cancel2Button.setBackground(Color.RED);
 		cancel2Button.setBounds(270, 632, 155, 46);
 		layeredPane.add(cancel2Button);
+		
 	}
 }
