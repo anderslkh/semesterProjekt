@@ -55,5 +55,4 @@ public class SaleController {
 	public void setEmployee() {
 		currSaleOrder.setEmployee(testEmployee);
 	}
-
 }

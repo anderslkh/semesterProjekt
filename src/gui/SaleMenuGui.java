@@ -42,12 +42,17 @@ public class SaleMenuGui extends JFrame {
 	private JPanel contentPane;
 	private JTextField vareNrTextField;
 	private JTextField txtIndtastAntal;
+	private JTextField txtTelefon;
+	private JTextField kontantBetalingTxtField;
 	private SaleController saleController;
 	private JTable table;
 	private JTable table_1;
 	private int proID;
 	private int antal;
 	private int price;
+	private double total;
+	private double total1;
+	private double total2;
 
 	/**
 	 * Launch the application.
@@ -127,6 +132,27 @@ public class SaleMenuGui extends JFrame {
 		txtIndtastAntal.setText("1");
 		txtIndtastAntal.setColumns(10);
 		
+		JTextPane txtpnFindEksisterendeKunde = new JTextPane();
+		txtpnFindEksisterendeKunde.setBackground(SystemColor.activeCaption);
+		txtpnFindEksisterendeKunde.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnFindEksisterendeKunde.setText("Find eksisterende kunde");
+		txtpnFindEksisterendeKunde.setBounds(1378, 125, 400, 21);
+		layeredPane.add(txtpnFindEksisterendeKunde);
+		
+		txtTelefon = new JTextField();
+		txtTelefon.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtTelefon.setText("Telefon");
+		txtTelefon.setBounds(1378, 146, 400, 40);
+		layeredPane.add(txtTelefon);
+		txtTelefon.setColumns(10);
+		
+		JTextPane txtpnKundeinformation = new JTextPane();
+		txtpnKundeinformation.setText("Kundeinformation");
+		txtpnKundeinformation.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnKundeinformation.setBackground(SystemColor.activeCaption);
+		txtpnKundeinformation.setBounds(1378, 209, 400, 21);
+		layeredPane.add(txtpnKundeinformation);
+		
 		table_1 = new JTable();
 		table_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		table_1.setModel(new DefaultTableModel(
@@ -144,7 +170,7 @@ public class SaleMenuGui extends JFrame {
 		));
 		table_1.getColumnModel().getColumn(0).setPreferredWidth(69);
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(114);
-		table_1.setBounds(912, 23, 400, 96);
+		table_1.setBounds(1378, 230, 400, 96);
 		layeredPane.add(table_1);
 
 		JTextPane antalTxtpn = new JTextPane();
@@ -152,7 +178,6 @@ public class SaleMenuGui extends JFrame {
 		antalTxtpn.setEditable(false);
 		antalTxtpn.setBackground(SystemColor.activeCaption);
 		antalTxtpn.setBounds(10, 491, 400, 21);
-		layeredPane.add(antalTxtpn);
 		antalTxtpn.setText("Antal");
 
 		JTextPane vareTxtpn_1 = new JTextPane();
@@ -162,37 +187,57 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn_1.setEditable(false);
 		vareTxtpn_1.setBackground(SystemColor.activeCaption);
-		vareTxtpn_1.setBounds(576, 125, 870, 21);
+		vareTxtpn_1.setBounds(576, 125, 648, 21);
 		layeredPane.add(vareTxtpn_1);
-
-		JTextPane subTotalShowingTxtpn = 
-				new JTextPane();
+		
+		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setText("0");
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
-		subTotalShowingTxtpn.setBounds(576, 690, 291, 40);
+		subTotalShowingTxtpn.setBounds(1378, 512, 400, 40);
 		layeredPane.add(subTotalShowingTxtpn);
-
-		JButton betalingsButton = new JButton("G\u00E5 til betaling");
-		betalingsButton.addActionListener(new ActionListener() {
+		
+		JButton btnNewButton_3 = new JButton("OK");
+		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				new BetalingsMenu().setVisible(true);
+				total2 = Double.parseDouble(subTotalShowingTxtpn.getText());;
+				total1 = Double.parseDouble(kontantBetalingTxtField.getText());
+				total = total2 - total1;
+				subTotalShowingTxtpn.setText(Double.toString(total));
+				if(Double.parseDouble(subTotalShowingTxtpn.getText()) <= 0) {
+					ReturnAmountPage frame = new ReturnAmountPage();
+					frame.setVisible(true);
+					setVisible(false);
+					
+				}
+				
 			}
 		});
-
-		betalingsButton.setBackground(new Color(95, 158, 160));
-		betalingsButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		betalingsButton.setBounds(867, 690, 187, 40);
-		layeredPane.add(betalingsButton);
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton_3.setBackground(new Color(95, 158, 160));
+		btnNewButton_3.setBounds(1778, 420, 85, 40);
+		layeredPane.add(btnNewButton_3);
+		
+		kontantBetalingTxtField = new JTextField();
+		kontantBetalingTxtField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		kontantBetalingTxtField.setColumns(10);
+		kontantBetalingTxtField.setBounds(1378, 421, 400, 40);
+		layeredPane.add(kontantBetalingTxtField);
+		
+		JTextPane txtpnKontantbetaling = new JTextPane();
+		txtpnKontantbetaling.setText("Kontantbetaling");
+		txtpnKontantbetaling.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnKontantbetaling.setBackground(SystemColor.activeCaption);
+		txtpnKontantbetaling.setBounds(1378, 400, 400, 21);
+		layeredPane.add(txtpnKontantbetaling);
 
 		JTextPane subTotalTxtpn = new JTextPane();
 		subTotalTxtpn.setText("Subtotal");
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
 		subTotalTxtpn.setBackground(SystemColor.activeCaption);
-		subTotalTxtpn.setBounds(576, 669, 291, 21);
+		subTotalTxtpn.setBounds(1378, 491, 400, 21);
 		layeredPane.add(subTotalTxtpn);
 
 		JButton findVareButton = new JButton("Find vare");
@@ -289,7 +334,7 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(tilfojVareSalgButton);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(576, 146, 870, 460);
+		scrollPane.setBounds(576, 146, 648, 461);
 		layeredPane.add(scrollPane);
 
 		table = new JTable();
