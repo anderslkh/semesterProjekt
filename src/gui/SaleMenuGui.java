@@ -190,6 +190,14 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setBounds(576, 125, 648, 21);
 		layeredPane.add(vareTxtpn_1);
 		
+		JTextPane returnTxtPn = new JTextPane();
+		returnTxtPn.setText("0");
+		returnTxtPn.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		returnTxtPn.setEditable(false);
+		returnTxtPn.setBackground(Color.WHITE);
+		returnTxtPn.setBounds(1378, 589, 400, 40);
+		layeredPane.add(returnTxtPn);
+		
 		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setText("0");
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -206,11 +214,12 @@ public class SaleMenuGui extends JFrame {
 				total = total2 - total1;
 				subTotalShowingTxtpn.setText(Double.toString(total));
 				if(Double.parseDouble(subTotalShowingTxtpn.getText()) <= 0) {
-					ReturnAmountPage frame = new ReturnAmountPage();
-					frame.setVisible(true);
-					setVisible(false);
+					total = Math.round(total);
+					returnTxtPn.setText(Double.toString(total));
+					subTotalShowingTxtpn.setText("");
+}
 					
-				}
+				
 				
 			}
 		});
@@ -388,6 +397,27 @@ public class SaleMenuGui extends JFrame {
 		btnFjernVare.setBackground(Color.RED);
 		btnFjernVare.setBounds(169, 669, 149, 61);
 		layeredPane.add(btnFjernVare);
+		
+		JButton btnFinishSale = new JButton("F\u00E6rdigg\u00F8r Salg");
+		btnFinishSale.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ReturnAmountPage frame = new ReturnAmountPage();
+				frame.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnFinishSale.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnFinishSale.setBackground(Color.RED);
+		btnFinishSale.setBounds(1481, 669, 212, 61);
+		layeredPane.add(btnFinishSale);
+		
+		JTextPane returnTxtBox = new JTextPane();
+		returnTxtBox.setText("Vekslepenge");
+		returnTxtBox.setFont(new Font("Tahoma", Font.BOLD, 14));
+		returnTxtBox.setEditable(false);
+		returnTxtBox.setBackground(SystemColor.activeCaption);
+		returnTxtBox.setBounds(1378, 568, 400, 21);
+		layeredPane.add(returnTxtBox);
 		
 		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
