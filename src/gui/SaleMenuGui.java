@@ -214,7 +214,8 @@ public class SaleMenuGui extends JFrame {
 				total = total2 - total1;
 				subTotalShowingTxtpn.setText(Double.toString(total));
 				if(Double.parseDouble(subTotalShowingTxtpn.getText()) <= 0) {
-					total = Math.round(total);
+					total = total * -1;
+					total = 0.5 * Math.round(total / 0.5);
 					returnTxtPn.setText(Double.toString(total));
 					subTotalShowingTxtpn.setText("");
 }
