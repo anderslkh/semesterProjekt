@@ -94,14 +94,14 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		vareTxtpn.setBackground(SystemColor.activeCaption);
 		vareTxtpn.setEditable(false);
-		vareTxtpn.setBounds(10, 125, 400, 21);
+		vareTxtpn.setBounds(10, 125, 300, 21);
 		layeredPane.add(vareTxtpn);
 		vareTxtpn.setPreferredSize(new Dimension(0, 0));
 		vareTxtpn.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn.setText("Vare");
 
 		vareNrTextField = new JTextField();
-		vareNrTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		vareNrTextField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		vareNrTextField.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -112,13 +112,13 @@ public class SaleMenuGui extends JFrame {
 		vareNrTextField.setBorder(null);
 		vareNrTextField.setToolTipText("xd");
 		vareNrTextField.setBackground(Color.WHITE);
-		vareNrTextField.setBounds(10, 146, 400, 40);
+		vareNrTextField.setBounds(10, 146, 300, 48);
 		layeredPane.add(vareNrTextField);
 		vareNrTextField.setPreferredSize(new Dimension(0, 0));
 		vareNrTextField.setColumns(10);
 
 		txtIndtastAntal = new JTextField();
-		txtIndtastAntal.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtIndtastAntal.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtIndtastAntal.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -127,7 +127,7 @@ public class SaleMenuGui extends JFrame {
 		});
 		txtIndtastAntal.setBorder(null);
 		txtIndtastAntal.setBackground(Color.WHITE);
-		txtIndtastAntal.setBounds(10, 512, 400, 40);
+		txtIndtastAntal.setBounds(10, 589, 300, 48);
 		layeredPane.add(txtIndtastAntal);
 		txtIndtastAntal.setText("1");
 		txtIndtastAntal.setColumns(10);
@@ -136,13 +136,13 @@ public class SaleMenuGui extends JFrame {
 		txtpnFindEksisterendeKunde.setBackground(SystemColor.activeCaption);
 		txtpnFindEksisterendeKunde.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnFindEksisterendeKunde.setText("Find eksisterende kunde");
-		txtpnFindEksisterendeKunde.setBounds(1378, 125, 400, 21);
+		txtpnFindEksisterendeKunde.setBounds(1150, 125, 300, 21);
 		layeredPane.add(txtpnFindEksisterendeKunde);
 		
 		txtTelefon = new JTextField();
-		txtTelefon.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtTelefon.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtTelefon.setText("Telefon");
-		txtTelefon.setBounds(1378, 146, 400, 40);
+		txtTelefon.setBounds(1150, 146, 300, 48);
 		layeredPane.add(txtTelefon);
 		txtTelefon.setColumns(10);
 		
@@ -150,11 +150,11 @@ public class SaleMenuGui extends JFrame {
 		txtpnKundeinformation.setText("Kundeinformation");
 		txtpnKundeinformation.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnKundeinformation.setBackground(SystemColor.activeCaption);
-		txtpnKundeinformation.setBounds(1378, 209, 400, 21);
+		txtpnKundeinformation.setBounds(1150, 214, 300, 21);
 		layeredPane.add(txtpnKundeinformation);
 		
 		table_1 = new JTable();
-		table_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		table_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table_1.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"Navn", "Anders Hansen"},
@@ -170,7 +170,7 @@ public class SaleMenuGui extends JFrame {
 		));
 		table_1.getColumnModel().getColumn(0).setPreferredWidth(69);
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(114);
-		table_1.setBounds(1378, 230, 400, 96);
+		table_1.setBounds(1150, 235, 300, 96);
 		layeredPane.add(table_1);
 
 		JTextPane antalTxtpn = new JTextPane();
@@ -187,23 +187,23 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setMargin(new Insets(3, 3, 3, 0));
 		vareTxtpn_1.setEditable(false);
 		vareTxtpn_1.setBackground(SystemColor.activeCaption);
-		vareTxtpn_1.setBounds(576, 125, 648, 21);
+		vareTxtpn_1.setBounds(490, 125, 600, 21);
 		layeredPane.add(vareTxtpn_1);
 		
 		JTextPane returnTxtPn = new JTextPane();
 		returnTxtPn.setText("0");
-		returnTxtPn.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		returnTxtPn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		returnTxtPn.setEditable(false);
 		returnTxtPn.setBackground(Color.WHITE);
-		returnTxtPn.setBounds(1378, 589, 400, 40);
+		returnTxtPn.setBounds(1150, 589, 300, 48);
 		layeredPane.add(returnTxtPn);
 		
 		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setText("0");
-		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
-		subTotalShowingTxtpn.setBounds(1378, 512, 400, 40);
+		subTotalShowingTxtpn.setBounds(1150, 461, 300, 48);
 		layeredPane.add(subTotalShowingTxtpn);
 		
 		JButton btnNewButton_3 = new JButton("OK");
@@ -230,16 +230,16 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(btnNewButton_3);
 		
 		kontantBetalingTxtField = new JTextField();
-		kontantBetalingTxtField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		kontantBetalingTxtField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		kontantBetalingTxtField.setColumns(10);
-		kontantBetalingTxtField.setBounds(1378, 421, 400, 40);
+		kontantBetalingTxtField.setBounds(1150, 372, 300, 48);
 		layeredPane.add(kontantBetalingTxtField);
 		
 		JTextPane txtpnKontantbetaling = new JTextPane();
 		txtpnKontantbetaling.setText("Kontantbetaling");
 		txtpnKontantbetaling.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnKontantbetaling.setBackground(SystemColor.activeCaption);
-		txtpnKontantbetaling.setBounds(1378, 400, 400, 21);
+		txtpnKontantbetaling.setBounds(1150, 351, 300, 21);
 		layeredPane.add(txtpnKontantbetaling);
 
 		JTextPane subTotalTxtpn = new JTextPane();
@@ -247,15 +247,15 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
 		subTotalTxtpn.setBackground(SystemColor.activeCaption);
-		subTotalTxtpn.setBounds(1378, 491, 400, 21);
+		subTotalTxtpn.setBounds(1150, 440, 300, 21);
 		layeredPane.add(subTotalTxtpn);
 
 		JButton findVareButton = new JButton("Find vare");
 
 		findVareButton.setActionCommand("S\u00F8g");
 		findVareButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		findVareButton.setBackground(new Color(95, 158, 160));
-		findVareButton.setBounds(410, 144, 120, 40);
+		findVareButton.setBackground(SystemColor.inactiveCaption);
+		findVareButton.setBounds(310, 146, 120, 48);
 		layeredPane.add(findVareButton);
 		
 
@@ -264,18 +264,18 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(textPane);
 
 		JTextPane vareNavnTextField = new JTextPane();
-		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		vareNavnTextField.setBounds(10, 272, 400, 40);
+		vareNavnTextField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		vareNavnTextField.setBounds(10, 285, 300, 48);
 		layeredPane.add(vareNavnTextField);
 
 		JTextPane madeByCompanyTextField = new JTextPane();
-		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		madeByCompanyTextField.setBounds(10, 352, 400, 40);
+		madeByCompanyTextField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		madeByCompanyTextField.setBounds(10, 372, 300, 48);
 		layeredPane.add(madeByCompanyTextField);
 
 		JTextPane priceTextField = new JTextPane();
-		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		priceTextField.setBounds(9, 432, 400, 40);
+		priceTextField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		priceTextField.setBounds(10, 461, 300, 48);
 		layeredPane.add(priceTextField);
 
 		JTextPane navnTxtpn = new JTextPane();
@@ -285,7 +285,7 @@ public class SaleMenuGui extends JFrame {
 		navnTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		navnTxtpn.setEditable(false);
 		navnTxtpn.setBackground(SystemColor.activeCaption);
-		navnTxtpn.setBounds(10, 251, 400, 21);
+		navnTxtpn.setBounds(10, 264, 300, 21);
 		layeredPane.add(navnTxtpn);
 
 		JTextPane producentTxtpn = new JTextPane();
@@ -295,7 +295,7 @@ public class SaleMenuGui extends JFrame {
 		producentTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		producentTxtpn.setEditable(false);
 		producentTxtpn.setBackground(SystemColor.activeCaption);
-		producentTxtpn.setBounds(10, 331, 400, 21);
+		producentTxtpn.setBounds(10, 351, 300, 21);
 		layeredPane.add(producentTxtpn);
 
 		JTextPane prisTxtpn = new JTextPane();
@@ -305,7 +305,7 @@ public class SaleMenuGui extends JFrame {
 		prisTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		prisTxtpn.setEditable(false);
 		prisTxtpn.setBackground(SystemColor.activeCaption);
-		prisTxtpn.setBounds(10, 411, 400, 21);
+		prisTxtpn.setBounds(10, 440, 300, 21);
 		layeredPane.add(prisTxtpn);
 
 		JList list = new JList();
@@ -337,14 +337,14 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(udlanButton);
 
 		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
-		tilfojVareSalgButton.setBackground(new Color(95, 158, 160));
+		tilfojVareSalgButton.setBackground(SystemColor.inactiveCaption);
 		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		tilfojVareSalgButton.setBounds(410, 512, 120, 40);
+		tilfojVareSalgButton.setBounds(310, 589, 120, 48);
 		layeredPane.add(tilfojVareSalgButton);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(576, 146, 648, 461);
+		scrollPane.setBounds(490, 146, 600, 491);
 		layeredPane.add(scrollPane);
 
 		table = new JTable();
@@ -358,7 +358,7 @@ public class SaleMenuGui extends JFrame {
 					}
 				});
 		scrollPane.setViewportView(table);
-		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
 		JButton cancelButton = new JButton("Annuller Salg");
 		cancelButton.addActionListener(new ActionListener() {
@@ -375,7 +375,7 @@ public class SaleMenuGui extends JFrame {
 		});
 		cancelButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		cancelButton.setBackground(Color.RED);
-		cancelButton.setBounds(10, 669, 149, 61);
+		cancelButton.setBounds(10, 669, 145, 61);
 		layeredPane.add(cancelButton);
 		
 		JButton btnFjernVare = new JButton("Fjern vare");
@@ -396,7 +396,7 @@ public class SaleMenuGui extends JFrame {
 		
 		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnFjernVare.setBackground(Color.RED);
-		btnFjernVare.setBounds(169, 669, 149, 61);
+		btnFjernVare.setBounds(165, 669, 145, 61);
 		layeredPane.add(btnFjernVare);
 		
 		JButton btnFinishSale = new JButton("F\u00E6rdigg\u00F8r Salg");
@@ -409,7 +409,7 @@ public class SaleMenuGui extends JFrame {
 		});
 		btnFinishSale.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnFinishSale.setBackground(Color.GREEN);
-		btnFinishSale.setBounds(1481, 669, 212, 61);
+		btnFinishSale.setBounds(1150, 669, 212, 61);
 		layeredPane.add(btnFinishSale);
 		
 		JTextPane returnTxtBox = new JTextPane();
@@ -417,8 +417,18 @@ public class SaleMenuGui extends JFrame {
 		returnTxtBox.setFont(new Font("Tahoma", Font.BOLD, 14));
 		returnTxtBox.setEditable(false);
 		returnTxtBox.setBackground(SystemColor.activeCaption);
-		returnTxtBox.setBounds(1378, 568, 400, 21);
+		returnTxtBox.setBounds(1150, 568, 300, 21);
 		layeredPane.add(returnTxtBox);
+		
+		JTextPane txtpnAntal = new JTextPane();
+		txtpnAntal.setText("Antal");
+		txtpnAntal.setPreferredSize(new Dimension(0, 0));
+		txtpnAntal.setMargin(new Insets(3, 3, 3, 0));
+		txtpnAntal.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtpnAntal.setEditable(false);
+		txtpnAntal.setBackground(SystemColor.activeCaption);
+		txtpnAntal.setBounds(10, 568, 300, 21);
+		layeredPane.add(txtpnAntal);
 		
 		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
