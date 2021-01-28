@@ -225,8 +225,8 @@ public class SaleMenuGui extends JFrame {
 			}
 		});
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_3.setBackground(new Color(95, 158, 160));
-		btnNewButton_3.setBounds(1778, 420, 85, 40);
+		btnNewButton_3.setBackground(SystemColor.inactiveCaption);
+		btnNewButton_3.setBounds(1450, 372, 85, 48);
 		layeredPane.add(btnNewButton_3);
 		
 		kontantBetalingTxtField = new JTextField();
