@@ -131,43 +131,34 @@ public class SaleMenuGui extends JFrame {
 		layeredPane.add(txtIndtastAntal);
 		txtIndtastAntal.setText("1");
 		txtIndtastAntal.setColumns(10);
-		
+
 		JTextPane txtpnFindEksisterendeKunde = new JTextPane();
 		txtpnFindEksisterendeKunde.setBackground(SystemColor.activeCaption);
 		txtpnFindEksisterendeKunde.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnFindEksisterendeKunde.setText("Find eksisterende kunde");
 		txtpnFindEksisterendeKunde.setBounds(1150, 125, 300, 21);
 		layeredPane.add(txtpnFindEksisterendeKunde);
-		
+
 		txtTelefon = new JTextField();
 		txtTelefon.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtTelefon.setText("Telefon");
 		txtTelefon.setBounds(1150, 146, 300, 48);
 		layeredPane.add(txtTelefon);
 		txtTelefon.setColumns(10);
-		
+
 		JTextPane txtpnKundeinformation = new JTextPane();
 		txtpnKundeinformation.setText("Kundeinformation");
 		txtpnKundeinformation.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnKundeinformation.setBackground(SystemColor.activeCaption);
 		txtpnKundeinformation.setBounds(1150, 214, 300, 21);
 		layeredPane.add(txtpnKundeinformation);
-		
+
 		table_1 = new JTable();
 		table_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table_1.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Navn", "Anders Hansen"},
-				{"Tlf nr", "12345678"},
-				{"Mail", "ahansen@yahoo.com"},
-				{"Adresse", "Boligstr\u00E6de 4"},
-				{"Postnummer", "9231"},
-				{"By", "K\u00F8benhavn"},
-			},
-			new String[] {
-				" ", "Kundeinformation"
-			}
-		));
+				new Object[][] { { "Navn", "Anders Hansen" }, { "Tlf nr", "12345678" }, { "Mail", "ahansen@yahoo.com" },
+						{ "Adresse", "Boligstr\u00E6de 4" }, { "Postnummer", "9231" }, { "By", "K\u00F8benhavn" }, },
+				new String[] { " ", "Kundeinformation" }));
 		table_1.getColumnModel().getColumn(0).setPreferredWidth(69);
 		table_1.getColumnModel().getColumn(1).setPreferredWidth(114);
 		table_1.setBounds(1150, 235, 300, 96);
@@ -189,7 +180,7 @@ public class SaleMenuGui extends JFrame {
 		vareTxtpn_1.setBackground(SystemColor.activeCaption);
 		vareTxtpn_1.setBounds(490, 125, 600, 21);
 		layeredPane.add(vareTxtpn_1);
-		
+
 		JTextPane returnTxtPn = new JTextPane();
 		returnTxtPn.setText("0");
 		returnTxtPn.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -197,49 +188,48 @@ public class SaleMenuGui extends JFrame {
 		returnTxtPn.setBackground(Color.WHITE);
 		returnTxtPn.setBounds(1150, 589, 300, 48);
 		layeredPane.add(returnTxtPn);
-		
+
 		JTextPane subTotalShowingTxtpn = new JTextPane();
 		subTotalShowingTxtpn.setText("0");
 		subTotalShowingTxtpn.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		subTotalShowingTxtpn.setEditable(false);
 		subTotalShowingTxtpn.setBackground(Color.WHITE);
-		subTotalShowingTxtpn.setBounds(1150, 461, 300, 48);
+		subTotalShowingTxtpn.setBounds(1150, 372, 300, 48);
 		layeredPane.add(subTotalShowingTxtpn);
-		
+
 		JButton btnNewButton_3 = new JButton("OK");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				total2 = Double.parseDouble(subTotalShowingTxtpn.getText());;
+				total2 = Double.parseDouble(subTotalShowingTxtpn.getText());
+				;
 				total1 = Double.parseDouble(kontantBetalingTxtField.getText());
 				total = total2 - total1;
 				subTotalShowingTxtpn.setText(Double.toString(total));
-				if(Double.parseDouble(subTotalShowingTxtpn.getText()) <= 0) {
+				if (Double.parseDouble(subTotalShowingTxtpn.getText()) <= 0) {
 					total = total * -1;
 					total = 0.5 * Math.round(total / 0.5);
 					returnTxtPn.setText(Double.toString(total));
 					subTotalShowingTxtpn.setText("");
-}
-					
-				
-				
+				}
+
 			}
 		});
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_3.setBackground(new Color(95, 158, 160));
-		btnNewButton_3.setBounds(1778, 420, 85, 40);
+		btnNewButton_3.setBounds(1150, 518, 85, 40);
 		layeredPane.add(btnNewButton_3);
-		
+
 		kontantBetalingTxtField = new JTextField();
 		kontantBetalingTxtField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		kontantBetalingTxtField.setColumns(10);
-		kontantBetalingTxtField.setBounds(1150, 372, 300, 48);
+		kontantBetalingTxtField.setBounds(1150, 459, 300, 48);
 		layeredPane.add(kontantBetalingTxtField);
-		
+
 		JTextPane txtpnKontantbetaling = new JTextPane();
 		txtpnKontantbetaling.setText("Kontantbetaling");
 		txtpnKontantbetaling.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtpnKontantbetaling.setBackground(SystemColor.activeCaption);
-		txtpnKontantbetaling.setBounds(1150, 351, 300, 21);
+		txtpnKontantbetaling.setBounds(1150, 440, 300, 21);
 		layeredPane.add(txtpnKontantbetaling);
 
 		JTextPane subTotalTxtpn = new JTextPane();
@@ -247,7 +237,7 @@ public class SaleMenuGui extends JFrame {
 		subTotalTxtpn.setFont(new Font("Tahoma", Font.BOLD, 14));
 		subTotalTxtpn.setEditable(false);
 		subTotalTxtpn.setBackground(SystemColor.activeCaption);
-		subTotalTxtpn.setBounds(1150, 440, 300, 21);
+		subTotalTxtpn.setBounds(1150, 351, 300, 21);
 		layeredPane.add(subTotalTxtpn);
 
 		JButton findVareButton = new JButton("Find vare");
@@ -257,7 +247,6 @@ public class SaleMenuGui extends JFrame {
 		findVareButton.setBackground(SystemColor.inactiveCaption);
 		findVareButton.setBounds(310, 146, 120, 48);
 		layeredPane.add(findVareButton);
-		
 
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(185, 280, -62, 19);
@@ -339,7 +328,7 @@ public class SaleMenuGui extends JFrame {
 		JButton tilfojVareSalgButton = new JButton("Tilf\u00F8j");
 		tilfojVareSalgButton.setBackground(SystemColor.inactiveCaption);
 		tilfojVareSalgButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		
+
 		tilfojVareSalgButton.setBounds(310, 589, 120, 48);
 		layeredPane.add(tilfojVareSalgButton);
 
@@ -359,7 +348,7 @@ public class SaleMenuGui extends JFrame {
 				});
 		scrollPane.setViewportView(table);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		
+
 		JButton cancelButton = new JButton("Annuller Salg");
 		cancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -377,28 +366,27 @@ public class SaleMenuGui extends JFrame {
 		cancelButton.setBackground(Color.RED);
 		cancelButton.setBounds(10, 669, 145, 61);
 		layeredPane.add(cancelButton);
-		
+
 		JButton btnFjernVare = new JButton("Fjern vare");
 		btnFjernVare.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				DefaultTableModel model = (DefaultTableModel) table.getModel();				
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				try {
-				int SelectedRowIndex = table.getSelectedRow();
-				model.removeRow(SelectedRowIndex);
-				}catch(Exception ex)
-				{
+					int SelectedRowIndex = table.getSelectedRow();
+					model.removeRow(SelectedRowIndex);
+				} catch (Exception ex) {
 					JOptionPane.showMessageDialog(null, ex);
 				}
 			}
-	
+
 		});
-		
+
 		btnFjernVare.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnFjernVare.setBackground(Color.RED);
 		btnFjernVare.setBounds(165, 669, 145, 61);
 		layeredPane.add(btnFjernVare);
-		
+
 		JButton btnFinishSale = new JButton("F\u00E6rdigg\u00F8r Salg");
 		btnFinishSale.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -411,7 +399,7 @@ public class SaleMenuGui extends JFrame {
 		btnFinishSale.setBackground(Color.GREEN);
 		btnFinishSale.setBounds(1150, 669, 212, 61);
 		layeredPane.add(btnFinishSale);
-		
+
 		JTextPane returnTxtBox = new JTextPane();
 		returnTxtBox.setText("Vekslepenge");
 		returnTxtBox.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -419,7 +407,7 @@ public class SaleMenuGui extends JFrame {
 		returnTxtBox.setBackground(SystemColor.activeCaption);
 		returnTxtBox.setBounds(1150, 568, 300, 21);
 		layeredPane.add(returnTxtBox);
-		
+
 		JTextPane txtpnAntal = new JTextPane();
 		txtpnAntal.setText("Antal");
 		txtpnAntal.setPreferredSize(new Dimension(0, 0));
@@ -429,7 +417,7 @@ public class SaleMenuGui extends JFrame {
 		txtpnAntal.setBackground(SystemColor.activeCaption);
 		txtpnAntal.setBounds(10, 568, 300, 21);
 		layeredPane.add(txtpnAntal);
-		
+
 		findVareButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				proID = Integer.parseInt(vareNrTextField.getText());
@@ -441,12 +429,12 @@ public class SaleMenuGui extends JFrame {
 					price = saleProduct.getPrice();
 					priceTextField.setText("" + saleProduct.getPrice());
 					vareNrTextField.setText("Indtast varens ID.");
-				}	else {
-		    		new ErrorOneFrame().setVisible(true);
+				} else {
+					new ErrorOneFrame().setVisible(true);
 				}
 			}
 		});
-			
+
 		tilfojVareSalgButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				antal = Integer.parseInt(txtIndtastAntal.getText());
@@ -466,8 +454,6 @@ public class SaleMenuGui extends JFrame {
 				txtIndtastAntal.setText("1");
 			}
 		});
-		
 
-		
 	}
 }
